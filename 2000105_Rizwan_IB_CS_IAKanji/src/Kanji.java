@@ -11,8 +11,11 @@ import java.util.ArrayList;
  * @author 2000105
  */
 public class Kanji {
+    // in the dictionary I use, each Kanji will have an index. The index 
+    // is actually dependent on the level of the student
     int index;
     String meaning;
+    // Kunyomi and Onyomi are 
     ArrayList<String> Kunyomi;
     ArrayList<String> Onyomi;
     String level;
