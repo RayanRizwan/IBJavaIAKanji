@@ -69,8 +69,5 @@ public class Kanji {
     public void setLevel(String level) {
         this.level = level;
     }
-
-    
-    
-    
+ 
 }
