@@ -52,6 +52,5 @@ public class User {
     public void setLanguage(String language) {
         this.language = language;
     }
-    
-    
+
 }

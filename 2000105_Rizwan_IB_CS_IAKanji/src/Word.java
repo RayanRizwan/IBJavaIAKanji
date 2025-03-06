@@ -64,6 +64,5 @@ public class Word {
     public void setException(boolean exception) {
         this.exception = exception;
     }
-    
-    
+
 }

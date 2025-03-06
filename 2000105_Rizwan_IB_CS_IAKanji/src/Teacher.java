@@ -50,5 +50,4 @@ public class Teacher extends User {
         this.language = language;
     }
     
-    
 }
