@@ -26,6 +26,16 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        RadioButtonSL = new javax.swing.JRadioButton();
+        RadioButtonHL = new javax.swing.JRadioButton();
+        RadioButtonJoyoKanji = new javax.swing.JRadioButton();
+        ButtonFlashcards = new javax.swing.JButton();
+        ButtonPassages = new javax.swing.JButton();
+        ButtonPassages1 = new javax.swing.JButton();
+        LabelWelcome = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -33,6 +43,46 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        buttonGroup1.add(RadioButtonSL);
+        RadioButtonSL.setText("Standard Level");
+
+        buttonGroup1.add(RadioButtonHL);
+        RadioButtonHL.setText("Higher Level");
+
+        buttonGroup1.add(RadioButtonJoyoKanji);
+        RadioButtonJoyoKanji.setText("Joyo Kanji");
+        RadioButtonJoyoKanji.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonJoyoKanjiActionPerformed(evt);
+            }
+        });
+
+        ButtonFlashcards.setText("Flashcards");
+        ButtonFlashcards.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonFlashcardsActionPerformed(evt);
+            }
+        });
+
+        ButtonPassages.setText("Passages");
+
+        ButtonPassages1.setText("Vocab List");
+        ButtonPassages1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonPassages1ActionPerformed(evt);
+            }
+        });
+
+        LabelWelcome.setText("Welcome!");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Best\nLearning Opportunities");
+        jTextArea1.setToolTipText("");
+        jTextArea1.setName(""); // NOI18N
+        jScrollPane1.setViewportView(jTextArea1);
 
         jMenu1.setText("漢字");
         jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
@@ -48,15 +98,68 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 629, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RadioButtonSL)
+                            .addComponent(ButtonFlashcards))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RadioButtonHL)
+                            .addComponent(ButtonPassages))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ButtonPassages1)
+                            .addComponent(RadioButtonJoyoKanji)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelWelcome)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(LabelWelcome)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RadioButtonSL)
+                    .addComponent(RadioButtonHL)
+                    .addComponent(RadioButtonJoyoKanji))
+                .addGap(52, 52, 52))
         );
+
+        RadioButtonSL.getAccessibleContext().setAccessibleName("RadioButtonSL");
+        RadioButtonHL.getAccessibleContext().setAccessibleName("RadioButtonHL");
+        RadioButtonHL.getAccessibleContext().setAccessibleDescription("");
+        RadioButtonJoyoKanji.getAccessibleContext().setAccessibleName("RadioButtonJoyoKanji");
+        ButtonFlashcards.getAccessibleContext().setAccessibleName("Flashcards");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RadioButtonJoyoKanjiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonJoyoKanjiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RadioButtonJoyoKanjiActionPerformed
+
+    private void ButtonFlashcardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFlashcardsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonFlashcardsActionPerformed
+
+    private void ButtonPassages1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPassages1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonPassages1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,9 +197,19 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonFlashcards;
+    private javax.swing.JButton ButtonPassages;
+    private javax.swing.JButton ButtonPassages1;
+    private javax.swing.JLabel LabelWelcome;
+    private javax.swing.JRadioButton RadioButtonHL;
+    private javax.swing.JRadioButton RadioButtonJoyoKanji;
+    private javax.swing.JRadioButton RadioButtonSL;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
