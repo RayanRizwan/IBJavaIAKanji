@@ -34,8 +34,8 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         ButtonPassages = new javax.swing.JButton();
         ButtonPassages1 = new javax.swing.JButton();
         LabelWelcome = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jLabelBestLabelOpportunities = new javax.swing.JLabel();
+        jLabelLearnJapanese = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -76,13 +76,11 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
 
         LabelWelcome.setText("Welcome!");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Best\nLearning Opportunities");
-        jTextArea1.setToolTipText("");
-        jTextArea1.setName(""); // NOI18N
-        jScrollPane1.setViewportView(jTextArea1);
+        jLabelBestLabelOpportunities.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
+        jLabelBestLabelOpportunities.setText("Best Learning Opportunities");
+
+        jLabelLearnJapanese.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabelLearnJapanese.setText("Learn Japanese as if it's your native tongue");
 
         jMenu1.setText("漢字");
         jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
@@ -116,9 +114,10 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelBestLabelOpportunities)
                             .addComponent(LabelWelcome)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(255, Short.MAX_VALUE))
+                            .addComponent(jLabelLearnJapanese))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,8 +125,10 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
                 .addGap(56, 56, 56)
                 .addComponent(LabelWelcome)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addComponent(jLabelBestLabelOpportunities, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelLearnJapanese, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,11 +206,11 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
     private javax.swing.JRadioButton RadioButtonJoyoKanji;
     private javax.swing.JRadioButton RadioButtonSL;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabelBestLabelOpportunities;
+    private javax.swing.JLabel jLabelLearnJapanese;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
