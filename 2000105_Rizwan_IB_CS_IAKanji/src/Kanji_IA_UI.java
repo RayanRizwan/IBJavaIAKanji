@@ -27,36 +27,22 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        RadioButtonSL = new javax.swing.JRadioButton();
-        RadioButtonHL = new javax.swing.JRadioButton();
-        RadioButtonJoyoKanji = new javax.swing.JRadioButton();
         ButtonFlashcards = new javax.swing.JButton();
         ButtonPassages = new javax.swing.JButton();
-        ButtonPassages1 = new javax.swing.JButton();
+        ButtonVocabList = new javax.swing.JButton();
         LabelWelcome = new javax.swing.JLabel();
         jLabelBestLabelOpportunities = new javax.swing.JLabel();
         jLabelLearnJapanese = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuLogin = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        buttonGroup1.add(RadioButtonSL);
-        RadioButtonSL.setText("Standard Level");
-
-        buttonGroup1.add(RadioButtonHL);
-        RadioButtonHL.setText("Higher Level");
-
-        buttonGroup1.add(RadioButtonJoyoKanji);
-        RadioButtonJoyoKanji.setText("Joyo Kanji");
-        RadioButtonJoyoKanji.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RadioButtonJoyoKanjiActionPerformed(evt);
-            }
-        });
+        setBackground(new java.awt.Color(255, 255, 255));
 
         ButtonFlashcards.setText("Flashcards");
         ButtonFlashcards.addActionListener(new java.awt.event.ActionListener() {
@@ -67,10 +53,10 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
 
         ButtonPassages.setText("Passages");
 
-        ButtonPassages1.setText("Vocab List");
-        ButtonPassages1.addActionListener(new java.awt.event.ActionListener() {
+        ButtonVocabList.setText("Vocab List");
+        ButtonVocabList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonPassages1ActionPerformed(evt);
+                ButtonVocabListActionPerformed(evt);
             }
         });
 
@@ -89,8 +75,21 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Login");
-        jMenu2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
+        jMenuLogin.setText("Login");
+        jMenuLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
+        jMenuLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuLoginActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMenuLogin);
+
+        jMenu4.setText("About");
+        jMenu4.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jMenuBar1.add(jMenu4);
+
+        jMenu2.setText("Sign Up");
+        jMenu2.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -100,69 +99,50 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RadioButtonSL)
-                            .addComponent(ButtonFlashcards))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RadioButtonHL)
-                            .addComponent(ButtonPassages))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ButtonPassages1)
-                            .addComponent(RadioButtonJoyoKanji)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelBestLabelOpportunities)
-                            .addComponent(LabelWelcome)
-                            .addComponent(jLabelLearnJapanese))))
-                .addContainerGap(354, Short.MAX_VALUE))
+                        .addComponent(ButtonFlashcards)
+                        .addGap(33, 33, 33)
+                        .addComponent(ButtonPassages)
+                        .addGap(30, 30, 30)
+                        .addComponent(ButtonVocabList))
+                    .addComponent(jLabelBestLabelOpportunities)
+                    .addComponent(LabelWelcome)
+                    .addComponent(jLabelLearnJapanese))
+                .addContainerGap(334, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
                 .addComponent(LabelWelcome)
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelBestLabelOpportunities, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelLearnJapanese, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RadioButtonSL)
-                    .addComponent(RadioButtonHL)
-                    .addComponent(RadioButtonJoyoKanji))
-                .addGap(52, 52, 52))
+                    .addComponent(ButtonVocabList, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
-
-        RadioButtonSL.getAccessibleContext().setAccessibleName("RadioButtonSL");
-        RadioButtonHL.getAccessibleContext().setAccessibleName("RadioButtonHL");
-        RadioButtonHL.getAccessibleContext().setAccessibleDescription("");
-        RadioButtonJoyoKanji.getAccessibleContext().setAccessibleName("RadioButtonJoyoKanji");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void RadioButtonJoyoKanjiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonJoyoKanjiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RadioButtonJoyoKanjiActionPerformed
 
     private void ButtonFlashcardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFlashcardsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonFlashcardsActionPerformed
 
-    private void ButtonPassages1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPassages1ActionPerformed
+    private void ButtonVocabListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVocabListActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonPassages1ActionPerformed
+    }//GEN-LAST:event_ButtonVocabListActionPerformed
+
+    private void jMenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,17 +182,16 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonFlashcards;
     private javax.swing.JButton ButtonPassages;
-    private javax.swing.JButton ButtonPassages1;
+    private javax.swing.JButton ButtonVocabList;
     private javax.swing.JLabel LabelWelcome;
-    private javax.swing.JRadioButton RadioButtonHL;
-    private javax.swing.JRadioButton RadioButtonJoyoKanji;
-    private javax.swing.JRadioButton RadioButtonSL;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabelBestLabelOpportunities;
     private javax.swing.JLabel jLabelLearnJapanese;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu jMenuLogin;
     // End of variables declaration//GEN-END:variables
 }
