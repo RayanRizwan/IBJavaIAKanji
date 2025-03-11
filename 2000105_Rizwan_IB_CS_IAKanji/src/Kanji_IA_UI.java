@@ -77,10 +77,13 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         LabelWelcome.setText("Welcome!");
 
         jLabelBestLabelOpportunities.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
-        jLabelBestLabelOpportunities.setText("Best Learning Opportunities");
+        jLabelBestLabelOpportunities.setText("日本語学者");
 
         jLabelLearnJapanese.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabelLearnJapanese.setText("Learn Japanese as if it's your native tongue");
+
+        jMenuBar1.setBackground(new java.awt.Color(205, 235, 217));
+        jMenuBar1.setAutoscrolls(true);
 
         jMenu1.setText("漢字");
         jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
@@ -117,18 +120,18 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
                             .addComponent(jLabelBestLabelOpportunities)
                             .addComponent(LabelWelcome)
                             .addComponent(jLabelLearnJapanese))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(LabelWelcome)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addComponent(jLabelBestLabelOpportunities, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelLearnJapanese, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,7 +148,6 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         RadioButtonHL.getAccessibleContext().setAccessibleName("RadioButtonHL");
         RadioButtonHL.getAccessibleContext().setAccessibleDescription("");
         RadioButtonJoyoKanji.getAccessibleContext().setAccessibleName("RadioButtonJoyoKanji");
-        ButtonFlashcards.getAccessibleContext().setAccessibleName("Flashcards");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
