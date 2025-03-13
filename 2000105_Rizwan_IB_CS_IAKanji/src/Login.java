@@ -26,21 +26,104 @@ public class Login extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        TextFieldUsername = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        TextFieldPassword = new javax.swing.JPasswordField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuLogin = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jLabel1.setText("Username");
+
+        TextFieldUsername.setText("EdogawaVocab");
+
+        jLabel2.setText("Password");
+
+        TextFieldPassword.setText("jPasswordField1");
+
+        jMenuBar1.setBackground(new java.awt.Color(205, 235, 217));
+        jMenuBar1.setAutoscrolls(true);
+
+        jMenu1.setText("漢字");
+        jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
+        jMenuBar1.add(jMenu1);
+
+        jMenuLogin.setText("Login");
+        jMenuLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
+        jMenuLogin.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenuLoginMenuSelected(evt);
+            }
+        });
+        jMenuLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuLoginActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMenuLogin);
+
+        jMenu4.setText("About");
+        jMenu4.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jMenuBar1.add(jMenu4);
+
+        jMenu2.setText("Sign Up");
+        jMenu2.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(96, 96, 96)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TextFieldUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                    .addComponent(TextFieldPassword))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(TextFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    public String username;
+    public String password;
+    
+    private void jMenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuLoginMenuSelected
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jMenuLoginMenuSelected
+
+    private void jMenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -85,5 +168,14 @@ public class Login extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField TextFieldPassword;
+    private javax.swing.JTextField TextFieldUsername;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuLogin;
     // End of variables declaration//GEN-END:variables
 }

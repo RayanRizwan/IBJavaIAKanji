@@ -33,6 +33,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="menuSelected" listener="javax.swing.event.MenuListener" parameters="javax.swing.event.MenuEvent" handler="jMenuLoginMenuSelected"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuLoginActionPerformed"/>
           </Events>
         </Menu>
