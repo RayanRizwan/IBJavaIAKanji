@@ -52,6 +52,9 @@
               <Font name="Yu Gothic UI" size="12" style="1"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="menuSelected" listener="javax.swing.event.MenuListener" parameters="javax.swing.event.MenuEvent" handler="jMenu2MenuSelected"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>

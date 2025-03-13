@@ -99,6 +99,15 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
 
         jMenu2.setText("Sign Up");
         jMenu2.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jMenu2.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu2MenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -160,7 +169,16 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         Login l = new Login(this, true);
         l.setVisible(true);
         
+       
+        
     }//GEN-LAST:event_jMenuLoginMenuSelected
+
+    private void jMenu2MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu2MenuSelected
+        // TODO add your handling code here:
+        
+        Sign_Up l = new Sign_Up(this, true);
+        l.setVisible(true);
+    }//GEN-LAST:event_jMenu2MenuSelected
 
     /**
      * @param args the command line arguments

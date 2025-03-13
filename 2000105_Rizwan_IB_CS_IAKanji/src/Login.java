@@ -30,11 +30,12 @@ public class Login extends javax.swing.JDialog {
         TextFieldUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         TextFieldPassword = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuLogin = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        MenuAbout = new javax.swing.JMenu();
+        MenuSignUp = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -45,6 +46,13 @@ public class Login extends javax.swing.JDialog {
         jLabel2.setText("Password");
 
         TextFieldPassword.setText("jPasswordField1");
+
+        jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jMenuBar1.setBackground(new java.awt.Color(205, 235, 217));
         jMenuBar1.setAutoscrolls(true);
@@ -71,13 +79,22 @@ public class Login extends javax.swing.JDialog {
         });
         jMenuBar1.add(jMenuLogin);
 
-        jMenu4.setText("About");
-        jMenu4.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        jMenuBar1.add(jMenu4);
+        MenuAbout.setText("About");
+        MenuAbout.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jMenuBar1.add(MenuAbout);
 
-        jMenu2.setText("Sign Up");
-        jMenu2.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        jMenuBar1.add(jMenu2);
+        MenuSignUp.setText("Sign Up");
+        MenuSignUp.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        MenuSignUp.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                MenuSignUpMenuSelected(evt);
+            }
+        });
+        jMenuBar1.add(MenuSignUp);
 
         setJMenuBar(jMenuBar1);
 
@@ -86,14 +103,19 @@ public class Login extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(96, 96, 96)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TextFieldUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                    .addComponent(TextFieldPassword))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(96, 96, 96)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TextFieldUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                            .addComponent(TextFieldPassword))))
                 .addContainerGap(137, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,7 +129,9 @@ public class Login extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(TextFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addComponent(jButton1)
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         pack();
@@ -119,11 +143,25 @@ public class Login extends javax.swing.JDialog {
     private void jMenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuLoginMenuSelected
         // TODO add your handling code here:
 
+        
     }//GEN-LAST:event_jMenuLoginMenuSelected
 
     private void jMenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuLoginActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        username = TextFieldUsername.getText();
+        password = TextFieldPassword.getText();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_MenuSignUpMenuSelected
 
     /**
      * @param args the command line arguments
@@ -168,13 +206,14 @@ public class Login extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu MenuAbout;
+    private javax.swing.JMenu MenuSignUp;
     private javax.swing.JPasswordField TextFieldPassword;
     private javax.swing.JTextField TextFieldUsername;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuLogin;
     // End of variables declaration//GEN-END:variables
