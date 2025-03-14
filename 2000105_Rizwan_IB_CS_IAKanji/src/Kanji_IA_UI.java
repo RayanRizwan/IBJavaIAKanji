@@ -35,9 +35,9 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         jLabelLearnJapanese = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuLogin = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        MenuLogin = new javax.swing.JMenu();
+        MenuAbout = new javax.swing.JMenu();
+        MenuSignUp = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -75,40 +75,40 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
         jMenuBar1.add(jMenu1);
 
-        jMenuLogin.setText("Login");
-        jMenuLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
-        jMenuLogin.addMenuListener(new javax.swing.event.MenuListener() {
+        MenuLogin.setText("Login");
+        MenuLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
+        MenuLogin.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
             }
             public void menuDeselected(javax.swing.event.MenuEvent evt) {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenuLoginMenuSelected(evt);
+                MenuLoginMenuSelected(evt);
             }
         });
-        jMenuLogin.addActionListener(new java.awt.event.ActionListener() {
+        MenuLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuLoginActionPerformed(evt);
+                MenuLoginActionPerformed(evt);
             }
         });
-        jMenuBar1.add(jMenuLogin);
+        jMenuBar1.add(MenuLogin);
 
-        jMenu4.setText("About");
-        jMenu4.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        jMenuBar1.add(jMenu4);
+        MenuAbout.setText("About");
+        MenuAbout.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jMenuBar1.add(MenuAbout);
 
-        jMenu2.setText("Sign Up");
-        jMenu2.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        jMenu2.addMenuListener(new javax.swing.event.MenuListener() {
+        MenuSignUp.setText("Sign Up");
+        MenuSignUp.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        MenuSignUp.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
             }
             public void menuDeselected(javax.swing.event.MenuEvent evt) {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu2MenuSelected(evt);
+                MenuSignUpMenuSelected(evt);
             }
         });
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(MenuSignUp);
 
         setJMenuBar(jMenuBar1);
 
@@ -158,27 +158,27 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonVocabListActionPerformed
 
-    private void jMenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuLoginActionPerformed
+    private void MenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuLoginActionPerformed
         // TODO add your handling code here:
         
         
-    }//GEN-LAST:event_jMenuLoginActionPerformed
+    }//GEN-LAST:event_MenuLoginActionPerformed
 
-    private void jMenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuLoginMenuSelected
+    private void MenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuLoginMenuSelected
         // TODO add your handling code here:
         Login l = new Login(this, true);
         l.setVisible(true);
         
        
         
-    }//GEN-LAST:event_jMenuLoginMenuSelected
+    }//GEN-LAST:event_MenuLoginMenuSelected
 
-    private void jMenu2MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu2MenuSelected
+    private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
         // TODO add your handling code here:
         
         Sign_Up l = new Sign_Up(this, true);
         l.setVisible(true);
-    }//GEN-LAST:event_jMenu2MenuSelected
+    }//GEN-LAST:event_MenuSignUpMenuSelected
 
     /**
      * @param args the command line arguments
@@ -220,14 +220,14 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
     private javax.swing.JButton ButtonPassages;
     private javax.swing.JButton ButtonVocabList;
     private javax.swing.JLabel LabelWelcome;
+    private javax.swing.JMenu MenuAbout;
+    private javax.swing.JMenu MenuLogin;
+    private javax.swing.JMenu MenuSignUp;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabelBestLabelOpportunities;
     private javax.swing.JLabel jLabelLearnJapanese;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenu jMenuLogin;
     // End of variables declaration//GEN-END:variables
 }

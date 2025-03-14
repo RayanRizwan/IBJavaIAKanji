@@ -46,7 +46,7 @@ public class Sign_Up extends javax.swing.JDialog {
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         TextFieldPassword = new javax.swing.JPasswordField();
-        ButtonLogin = new javax.swing.JButton();
+        ButtonSignUp = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         TextFieldUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -137,10 +137,10 @@ public class Sign_Up extends javax.swing.JDialog {
 
         TextFieldPassword.setText("jPasswordField1");
 
-        ButtonLogin.setText("Login");
-        ButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+        ButtonSignUp.setText("Sign Up");
+        ButtonSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonLoginActionPerformed(evt);
+                ButtonSignUpActionPerformed(evt);
             }
         });
 
@@ -208,6 +208,15 @@ public class Sign_Up extends javax.swing.JDialog {
 
         jMenu9.setText("Sign Up");
         jMenu9.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jMenu9.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu9MenuSelected(evt);
+            }
+        });
         jMenuBar3.add(jMenu9);
 
         setJMenuBar(jMenuBar3);
@@ -219,6 +228,19 @@ public class Sign_Up extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel5))
+                            .addGap(38, 38, 38)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ComboBoxLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TextFieldClassCode, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -242,25 +264,13 @@ public class Sign_Up extends javax.swing.JDialog {
                             .addComponent(jRadioButtonHL)
                             .addComponent(jRadioButtonTeacher))
                         .addGap(41, 41, 41)
-                        .addComponent(jRadioButtonJoyo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5))
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ComboBoxLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextFieldClassCode, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(247, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(179, 179, 179))
+                        .addComponent(jRadioButtonJoyo)))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(96, 96, 96)
+                .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(TextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -280,7 +290,7 @@ public class Sign_Up extends javax.swing.JDialog {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jRadioButtonTeacher)
                         .addComponent(jRadioButtonStudent1)))
-                .addGap(39, 39, 39)
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboBoxLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
@@ -288,22 +298,24 @@ public class Sign_Up extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(TextFieldClassCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addComponent(ButtonLogin)
-                .addGap(52, 52, 52))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(ButtonSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoginActionPerformed
+    private void ButtonSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSignUpActionPerformed
         // TODO add your handling code here:
 
         username = TextFieldUsername.getText();
         password = TextFieldPassword.getText();
         
-        
-    }//GEN-LAST:event_ButtonLoginActionPerformed
+        if (student){
+            
+        }
+    }//GEN-LAST:event_ButtonSignUpActionPerformed
 
     private void jMenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuLoginMenuSelected
         // TODO add your handling code here:
@@ -337,6 +349,10 @@ public class Sign_Up extends javax.swing.JDialog {
     private void ComboBoxLanguageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxLanguageActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBoxLanguageActionPerformed
+
+    private void jMenu9MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu9MenuSelected
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu9MenuSelected
 
     /**
      * @param args the command line arguments
@@ -381,7 +397,7 @@ public class Sign_Up extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonLogin;
+    private javax.swing.JButton ButtonSignUp;
     private javax.swing.JComboBox<String> ComboBoxLanguage;
     private javax.swing.JTextField TextFieldClassCode;
     private javax.swing.JPasswordField TextFieldPassword;
