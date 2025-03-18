@@ -168,14 +168,10 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         Login l = new Login(this, true);
         l.setVisible(true);
-        
-       
-        
     }//GEN-LAST:event_MenuLoginMenuSelected
 
     private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
         // TODO add your handling code here:
-        
         Sign_Up l = new Sign_Up(this, true);
         l.setVisible(true);
     }//GEN-LAST:event_MenuSignUpMenuSelected

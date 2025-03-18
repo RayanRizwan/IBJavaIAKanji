@@ -15,15 +15,17 @@ public class Teacher extends User {
     
     ArrayList<Student> Students;
     ArrayList<String> Curriculum;
+    String ClassCode;
     
     public Teacher(String username, String password, String passphrase, String language) {
         super(username, password, passphrase, language);
     }
 
-    public Teacher(ArrayList<Student> Students, ArrayList<String> Curriculum, String username, String password, String passphrase, String language) {
+    public Teacher(ArrayList<Student> Students, ArrayList<String> Curriculum, String username, String password, String passphrase, String language, String ClassCode) {
         super(username, password, passphrase, language);
         this.Students = Students;
         this.Curriculum = Curriculum;
+        this.ClassCode = ClassCode;
     }
 
     public ArrayList<Student> getStudents() {
@@ -49,5 +51,14 @@ public class Teacher extends User {
     public void setLanguage(String language) {
         this.language = language;
     }
+
+    public String getClassCode() {
+        return ClassCode;
+    }
+
+    public void setClassCode(String ClassCode) {
+        this.ClassCode = ClassCode;
+    }
+    
     
 }

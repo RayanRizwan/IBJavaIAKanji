@@ -11,11 +11,27 @@ import java.util.ArrayList;
  * @author 2000105
  */
 public class Main {
-    public static void main(String[] args){
-        
-    }
+
     
     ArrayList<Student> Students = new ArrayList<>();
     ArrayList<Teacher> Teacher = new ArrayList<>();
     
+    public static void main(String[] args){
+        
+    }
+    
+    public void addStudents(Student e){
+        // ClassCode allows a Student to find their teacher after the teacher has created one
+        
+        Students.add(e);
+
+    }
+    
+    public void addTeacher(Teacher e){
+        // ClassCode allows a Student to find their teacher after the teacher has created one
+        
+        Teacher.add(e);
+
+    }
 }
+
