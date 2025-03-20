@@ -120,10 +120,15 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
+        // TODO add your handling code here:
+        Sign_Up l = new Sign_Up(this, true);
+        l.setVisible(true);
+    }//GEN-LAST:event_MenuSignUpMenuSelected
+
     private void MenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuLoginActionPerformed
         // TODO add your handling code here:
-        
-        
+
     }//GEN-LAST:event_MenuLoginActionPerformed
 
     private void MenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuLoginMenuSelected
@@ -131,12 +136,6 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         Login l = new Login(this, true);
         l.setVisible(true);
     }//GEN-LAST:event_MenuLoginMenuSelected
-
-    private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
-        // TODO add your handling code here:
-        Sign_Up l = new Sign_Up(this, true);
-        l.setVisible(true);
-    }//GEN-LAST:event_MenuSignUpMenuSelected
 
     /**
      * @param args the command line arguments
