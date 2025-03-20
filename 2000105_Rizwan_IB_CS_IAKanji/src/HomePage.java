@@ -37,6 +37,7 @@ public class HomePage extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
         MenuAbout = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -96,6 +97,11 @@ public class HomePage extends javax.swing.JFrame {
         MenuAbout.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jMenuBar1.add(MenuAbout);
 
+        jMenu2.setText("Name");
+        jMenu2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        jMenuBar1.add(jMenu2);
+        jMenu2.getAccessibleContext().setAccessibleName("MenuUsername");
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -146,8 +152,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void MenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuLoginActionPerformed
         // TODO add your handling code here:
-        
-        
+
     }//GEN-LAST:event_MenuLoginActionPerformed
 
     private void MenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuLoginMenuSelected
@@ -202,6 +207,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelBestLabelOpportunities;
     private javax.swing.JLabel jLabelLearnJapanese;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables

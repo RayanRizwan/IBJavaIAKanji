@@ -140,6 +140,7 @@ public class Login extends javax.swing.JDialog {
     public String username;
     public String password;
     
+    
     private void jMenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuLoginMenuSelected
         // TODO add your handling code here:
 
@@ -155,6 +156,8 @@ public class Login extends javax.swing.JDialog {
         
         username = TextFieldUsername.getText();
         password = TextFieldPassword.getText();
+        // user main.findUser to find user etc.
+        
     }//GEN-LAST:event_ButtonLoginActionPerformed
 
     private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected

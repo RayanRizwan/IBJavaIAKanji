@@ -23,7 +23,7 @@ public class Sign_Up extends javax.swing.JDialog {
     public String classCode;
     public boolean student;
     public boolean teacher;
-     Main main = new Main();
+     Main SignUp = new Main();
     
     public Sign_Up(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -363,14 +363,17 @@ public class Sign_Up extends javax.swing.JDialog {
         
         if (teacher){
             Teacher x = createTeacher(username, password, passphrase, language, classCode);
-            main.addTeacher(x);
+            SignUp.addTeacher(x);
+            SignUp.currentUser = x;
         }
         else if (student){
             Student x = createStudent(level, username, password, passphrase, language, classCode);
-            main.addStudents(x);
+            SignUp.addStudents(x);
             // adds student to the teacher's class
             x.teacher.addStudentstoClass(x);
+            SignUp.currentUser = x;
         }
+       
         
     }//GEN-LAST:event_ButtonSignUpActionPerformed
 
@@ -424,7 +427,7 @@ public class Sign_Up extends javax.swing.JDialog {
        ArrayList<Kanji> Kanji = new ArrayList<>();
        ArrayList<Word> VocabList = new ArrayList<>();
         
-       Teacher x = main.findClass(ClassCode);
+       Teacher x = SignUp.findClass(ClassCode);
        
         
         return new Student(level, Kanji, VocabList, x, username, password, passphrase, language);

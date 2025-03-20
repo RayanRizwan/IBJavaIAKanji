@@ -15,6 +15,7 @@ public class Main {
     
     ArrayList<Student> Students = new ArrayList<>();
     ArrayList<Teacher> Teacher = new ArrayList<>();
+    User currentUser;
     
     public static void main(String[] args){
         
@@ -39,6 +40,24 @@ public class Main {
             String cc = Teacher.get(i).ClassCode;
             if (cc.equals(classCode)){
                 return Teacher.get(i);
+            }
+        }
+        return null;
+    }
+    
+    public User findUser(String username){
+        for (int i = 0; i < Teacher.size(); i++) {
+            String user = Teacher.get(i).username;
+            if (user.equals(username)){
+                return Teacher.get(i);
+            }
+            else{
+                for (int j = 0; j < Students.size(); j++) {
+                    user = Students.get(i).username;
+                    if (user.equals(username)){
+                        return Students.get(i);
+                    }
+                }
             }
         }
         return null;

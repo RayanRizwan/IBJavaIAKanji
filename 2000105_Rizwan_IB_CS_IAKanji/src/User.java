@@ -8,7 +8,7 @@
  * @author 2000105
  */
 public class User {
-    private String username;
+    String username;
     private String password;
     private String passphrase;
     String language;
