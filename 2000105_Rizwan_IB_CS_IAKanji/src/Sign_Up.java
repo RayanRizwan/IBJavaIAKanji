@@ -366,7 +366,10 @@ public class Sign_Up extends javax.swing.JDialog {
             main.addTeacher(x);
         }
         else if (student){
-            
+            Student x = createStudent(level, username, password, passphrase, language, classCode);
+            main.addStudents(x);
+            // adds student to the teacher's class
+            x.teacher.addStudentstoClass(x);
         }
         
     }//GEN-LAST:event_ButtonSignUpActionPerformed
