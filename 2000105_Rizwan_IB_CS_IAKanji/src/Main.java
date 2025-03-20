@@ -33,5 +33,15 @@ public class Main {
         Teacher.add(e);
 
     }
+    
+    public Teacher findTeacher(String classCode){
+        for (int i = 0; i < Teacher.size(); i++) {
+            String cc = Teacher.get(i).ClassCode;
+            if (cc.equals(classCode)){
+                return Teacher.get(i);
+            }
+        }
+        return null;
+    }
 }
 

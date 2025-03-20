@@ -362,7 +362,8 @@ public class Sign_Up extends javax.swing.JDialog {
         }
         
         if (teacher){
-            createTeacher(username, password, passphrase, language, classCode);
+            Teacher x = createTeacher(username, password, passphrase, language, classCode);
+            main.addTeacher(x);
         }
         else if (student){
             
@@ -413,6 +414,12 @@ public class Sign_Up extends javax.swing.JDialog {
         
         return Teacher(Class, Curriculum, username, password, passphrase, language, ClassCode);
     }
+    
+   
+    
+
+        
+
     /**
      * @param args the command line arguments
      */
