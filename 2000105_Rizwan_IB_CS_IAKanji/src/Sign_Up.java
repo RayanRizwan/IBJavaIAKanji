@@ -416,12 +416,15 @@ public class Sign_Up extends javax.swing.JDialog {
         return Teacher(Class, Curriculum, username, password, passphrase, language, ClassCode);
     }
     
-   private Student createStudent(String level, String username, String password, String passphrase, String language){
+   private Student createStudent(String level, String username, String password, String passphrase, String language, String ClassCode){
        // Same concept as with Teacher, filler classes that the Student can add words to later
        ArrayList<Kanji> Kanji = new ArrayList<>();
-        ArrayList<Word> VocabList = new ArrayList<>();
+       ArrayList<Word> VocabList = new ArrayList<>();
         
-        return Student(level, Kanji, VocabList, username, password, passphrase, language);
+       Teacher x = main.findClass(ClassCode);
+       
+        
+        return Student(level, Kanji, VocabList, username, password, passphrase, language, x);
    }
     /**
      * @param args the command line arguments
@@ -505,7 +508,7 @@ public class Sign_Up extends javax.swing.JDialog {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    private Student Student(String level, ArrayList<Kanji> Kanji, ArrayList<Word> VocabList, String username, String password, String passphrase, String language) {
+    private Student Student(String level, ArrayList<Kanji> Kanji, ArrayList<Word> VocabList, String username, String password, String passphrase, String language, Teacher x) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

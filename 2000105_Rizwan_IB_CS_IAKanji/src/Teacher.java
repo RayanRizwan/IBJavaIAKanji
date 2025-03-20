@@ -31,6 +31,11 @@ public class Teacher extends User {
     public ArrayList<Student> getStudents() {
         return Students;
     }
+    
+    public void addStudentstoClass(Student a){
+        // adds student to the specific class given
+        Students.add(a);
+    }
 
     public void setStudents(ArrayList<Student> Students) {
         this.Students = Students;

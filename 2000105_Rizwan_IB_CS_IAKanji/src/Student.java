@@ -16,8 +16,9 @@ public class Student extends User {
     ArrayList<Kanji> Kanji;
     ArrayList<Word> Vocab;
     Teacher teacher;
+
     
-    public Student(String username, String password, String passphrase, String language) {
+    public Student(String username, String password, String passphrase, String language, Teacher teacher) {
         super(username, password, passphrase, language);
     }
 
