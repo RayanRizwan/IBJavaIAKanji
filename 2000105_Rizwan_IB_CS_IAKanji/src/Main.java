@@ -34,7 +34,7 @@ public class Main {
 
     }
     
-    public Teacher findTeacher(String classCode){
+    public Teacher findClass(String classCode){
         for (int i = 0; i < Teacher.size(); i++) {
             String cc = Teacher.get(i).ClassCode;
             if (cc.equals(classCode)){
