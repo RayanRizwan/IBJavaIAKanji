@@ -20,6 +20,7 @@ public class Sign_Up extends javax.swing.JDialog {
     public String level;
     public String language;
     public String passphrase;
+    public String classCode;
     public boolean student;
     public boolean teacher;
      Main main = new Main();
@@ -337,6 +338,7 @@ public class Sign_Up extends javax.swing.JDialog {
         password = TextFieldPassword.getText();
         passphrase = TextFieldPassphrase.getText();
         language = (String) ComboBoxLanguage.getSelectedItem();
+        classCode = TextFieldClassCode.getText();
         ArrayList<Kanji> Kanji;
         ArrayList<Word> Vocab;
         
@@ -360,8 +362,7 @@ public class Sign_Up extends javax.swing.JDialog {
         }
         
         if (teacher){
-            
-            
+            createTeacher(username, password, passphrase, language, classCode);
         }
         else if (student){
             
@@ -406,10 +407,11 @@ public class Sign_Up extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu9MenuSelected
     
-    private void createTeacher( Teacher teacher, String username, String password, String passphrase, String language){
-        ArrayList<Student> Class;
-        ArrayList<String> Curriculum;
+    private Teacher createTeacher(String username, String password, String passphrase, String language, String ClassCode){
+        ArrayList<Student> Class = new ArrayList<>();
+        ArrayList<String> Curriculum = new ArrayList<>();
         
+        return Teacher(Class, Curriculum, username, password, passphrase, language, ClassCode);
     }
     /**
      * @param args the command line arguments
@@ -488,4 +490,8 @@ public class Sign_Up extends javax.swing.JDialog {
     private javax.swing.JMenu jMenuLogin2;
     private javax.swing.JRadioButton jRadioButtonTeacher;
     // End of variables declaration//GEN-END:variables
+
+    private Teacher Teacher(ArrayList<Student> Class, ArrayList<String> Curriculum, String username, String password, String passphrase, String language, String ClassCode) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
