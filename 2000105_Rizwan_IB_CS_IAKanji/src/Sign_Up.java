@@ -416,7 +416,7 @@ public class Sign_Up extends javax.swing.JDialog {
         ArrayList<Student> Class = new ArrayList<>();
         ArrayList<String> Curriculum = new ArrayList<>();
         
-        return Teacher(Class, Curriculum, username, password, passphrase, language, ClassCode);
+        return new Teacher(Class, Curriculum, username, password, passphrase, language, ClassCode);
     }
     
    private Student createStudent(String level, String username, String password, String passphrase, String language, String ClassCode){
@@ -427,7 +427,7 @@ public class Sign_Up extends javax.swing.JDialog {
        Teacher x = main.findClass(ClassCode);
        
         
-        return Student(level, Kanji, VocabList, username, password, passphrase, language, x);
+        return new Student(level, Kanji, VocabList, x, username, password, passphrase, language);
    }
     /**
      * @param args the command line arguments
@@ -507,11 +507,5 @@ public class Sign_Up extends javax.swing.JDialog {
     private javax.swing.JRadioButton jRadioButtonTeacher;
     // End of variables declaration//GEN-END:variables
 
-    private Teacher Teacher(ArrayList<Student> Class, ArrayList<String> Curriculum, String username, String password, String passphrase, String language, String ClassCode) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
-    private Student Student(String level, ArrayList<Kanji> Kanji, ArrayList<Word> VocabList, String username, String password, String passphrase, String language, Teacher x) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

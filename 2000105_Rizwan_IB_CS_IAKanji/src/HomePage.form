@@ -27,7 +27,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuLogin">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Login"/>
+            <Property name="text" type="java.lang.String" value="Sign Out"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI Semilight" size="12" style="1"/>
             </Property>
@@ -44,17 +44,6 @@
               <Font name="Yu Gothic UI" size="12" style="1"/>
             </Property>
           </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="MenuSignUp">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Sign Up"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Yu Gothic UI" size="12" style="1"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="menuSelected" listener="javax.swing.event.MenuListener" parameters="javax.swing.event.MenuEvent" handler="MenuSignUpMenuSelected"/>
-          </Events>
         </Menu>
       </SubComponents>
     </Menu>
@@ -88,11 +77,18 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="ButtonFlashcards" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="ButtonPassages" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="ButtonVocabList" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="jLabelBestLabelOpportunities" min="-2" max="-2" attributes="0"/>
                   <Component id="LabelWelcome" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelLearnJapanese" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="374" max="32767" attributes="0"/>
+              <EmptySpace pref="334" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -105,15 +101,42 @@
               <Component id="jLabelBestLabelOpportunities" min="-2" pref="101" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabelLearnJapanese" min="-2" pref="101" max="-2" attributes="0"/>
-              <EmptySpace pref="114" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ButtonFlashcards" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="ButtonPassages" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="ButtonVocabList" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="67" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JButton" name="ButtonFlashcards">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Flashcards"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonFlashcardsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ButtonPassages">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Passages"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="ButtonVocabList">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Vocab List"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonVocabListActionPerformed"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JLabel" name="LabelWelcome">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Welcome!"/>
+        <Property name="text" type="java.lang.String" value="Click Options"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelBestLabelOpportunities">

@@ -7,12 +7,12 @@
  *
  * @author 2000105
  */
-public class Kanji_IA_UI extends javax.swing.JFrame {
+public class HomePage extends javax.swing.JFrame {
 
     /**
      * Creates new form Kanji_IA_UI
      */
-    public Kanji_IA_UI() {
+    public HomePage() {
         initComponents();
     }
 
@@ -27,6 +27,9 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         buttonGroup1 = new javax.swing.ButtonGroup();
+        ButtonFlashcards = new javax.swing.JButton();
+        ButtonPassages = new javax.swing.JButton();
+        ButtonVocabList = new javax.swing.JButton();
         LabelWelcome = new javax.swing.JLabel();
         jLabelBestLabelOpportunities = new javax.swing.JLabel();
         jLabelLearnJapanese = new javax.swing.JLabel();
@@ -34,14 +37,29 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
         MenuAbout = new javax.swing.JMenu();
-        MenuSignUp = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        LabelWelcome.setText("Welcome!");
+        ButtonFlashcards.setText("Flashcards");
+        ButtonFlashcards.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonFlashcardsActionPerformed(evt);
+            }
+        });
+
+        ButtonPassages.setText("Passages");
+
+        ButtonVocabList.setText("Vocab List");
+        ButtonVocabList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonVocabListActionPerformed(evt);
+            }
+        });
+
+        LabelWelcome.setText("Click Options");
 
         jLabelBestLabelOpportunities.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
         jLabelBestLabelOpportunities.setText("日本語学者");
@@ -56,7 +74,7 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
         jMenuBar1.add(jMenu1);
 
-        MenuLogin.setText("Login");
+        MenuLogin.setText("Sign Out");
         MenuLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
         MenuLogin.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
@@ -78,19 +96,6 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         MenuAbout.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jMenuBar1.add(MenuAbout);
 
-        MenuSignUp.setText("Sign Up");
-        MenuSignUp.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        MenuSignUp.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                MenuSignUpMenuSelected(evt);
-            }
-        });
-        jMenuBar1.add(MenuSignUp);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -100,10 +105,16 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ButtonFlashcards)
+                        .addGap(33, 33, 33)
+                        .addComponent(ButtonPassages)
+                        .addGap(30, 30, 30)
+                        .addComponent(ButtonVocabList))
                     .addComponent(jLabelBestLabelOpportunities)
                     .addComponent(LabelWelcome)
                     .addComponent(jLabelLearnJapanese))
-                .addContainerGap(374, Short.MAX_VALUE))
+                .addContainerGap(334, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,11 +125,24 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
                 .addComponent(jLabelBestLabelOpportunities, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelLearnJapanese, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonVocabList, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonFlashcardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFlashcardsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonFlashcardsActionPerformed
+
+    private void ButtonVocabListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVocabListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonVocabListActionPerformed
 
     private void MenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuLoginActionPerformed
         // TODO add your handling code here:
@@ -131,12 +155,6 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
         Login l = new Login(this, true);
         l.setVisible(true);
     }//GEN-LAST:event_MenuLoginMenuSelected
-
-    private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
-        // TODO add your handling code here:
-        Sign_Up l = new Sign_Up(this, true);
-        l.setVisible(true);
-    }//GEN-LAST:event_MenuSignUpMenuSelected
 
     /**
      * @param args the command line arguments
@@ -174,10 +192,12 @@ public class Kanji_IA_UI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonFlashcards;
+    private javax.swing.JButton ButtonPassages;
+    private javax.swing.JButton ButtonVocabList;
     private javax.swing.JLabel LabelWelcome;
     private javax.swing.JMenu MenuAbout;
     private javax.swing.JMenu MenuLogin;
-    private javax.swing.JMenu MenuSignUp;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabelBestLabelOpportunities;
     private javax.swing.JLabel jLabelLearnJapanese;
