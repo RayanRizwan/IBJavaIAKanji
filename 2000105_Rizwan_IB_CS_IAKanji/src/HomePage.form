@@ -56,6 +56,14 @@
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="MenuUsername"/>
           </AccessibilityProperties>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="MenuExit">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Exit"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Yu Gothic UI" size="12" style="1"/>
+            </Property>
+          </Properties>
+        </Menu>
       </SubComponents>
     </Menu>
   </NonVisualComponents>
@@ -96,7 +104,6 @@
                       <Component id="ButtonVocabList" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabelBestLabelOpportunities" min="-2" max="-2" attributes="0"/>
-                  <Component id="LabelWelcome" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelLearnJapanese" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="334" max="32767" attributes="0"/>
@@ -106,9 +113,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-              <Component id="LabelWelcome" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
               <Component id="jLabelBestLabelOpportunities" min="-2" pref="101" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabelLearnJapanese" min="-2" pref="101" max="-2" attributes="0"/>
@@ -144,11 +149,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonVocabListActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="LabelWelcome">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Click Options"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelBestLabelOpportunities">
       <Properties>

@@ -30,7 +30,6 @@ public class HomePage extends javax.swing.JFrame {
         ButtonFlashcards = new javax.swing.JButton();
         ButtonPassages = new javax.swing.JButton();
         ButtonVocabList = new javax.swing.JButton();
-        LabelWelcome = new javax.swing.JLabel();
         jLabelBestLabelOpportunities = new javax.swing.JLabel();
         jLabelLearnJapanese = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -38,6 +37,7 @@ public class HomePage extends javax.swing.JFrame {
         MenuLogin = new javax.swing.JMenu();
         MenuAbout = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        MenuExit = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -59,8 +59,6 @@ public class HomePage extends javax.swing.JFrame {
                 ButtonVocabListActionPerformed(evt);
             }
         });
-
-        LabelWelcome.setText("Click Options");
 
         jLabelBestLabelOpportunities.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
         jLabelBestLabelOpportunities.setText("日本語学者");
@@ -102,6 +100,10 @@ public class HomePage extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
         jMenu2.getAccessibleContext().setAccessibleName("MenuUsername");
 
+        MenuExit.setText("Exit");
+        MenuExit.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jMenuBar1.add(MenuExit);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,16 +120,13 @@ public class HomePage extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(ButtonVocabList))
                     .addComponent(jLabelBestLabelOpportunities)
-                    .addComponent(LabelWelcome)
                     .addComponent(jLabelLearnJapanese))
                 .addContainerGap(334, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(LabelWelcome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(80, 80, 80)
                 .addComponent(jLabelBestLabelOpportunities, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelLearnJapanese, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,8 +199,8 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton ButtonFlashcards;
     private javax.swing.JButton ButtonPassages;
     private javax.swing.JButton ButtonVocabList;
-    private javax.swing.JLabel LabelWelcome;
     private javax.swing.JMenu MenuAbout;
+    private javax.swing.JMenu MenuExit;
     private javax.swing.JMenu MenuLogin;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabelBestLabelOpportunities;
