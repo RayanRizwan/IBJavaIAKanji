@@ -12,9 +12,8 @@ import java.util.ArrayList;
  */
 public class Main {
 
-    
-    ArrayList<Student> Students = new ArrayList<>();
-    ArrayList<Teacher> Teacher = new ArrayList<>();
+    public ArrayList<Student> Students = new ArrayList<>();
+    public ArrayList<Teacher> Teacher = new ArrayList<>();
     User currentUser;
     
     public static void main(String[] args){

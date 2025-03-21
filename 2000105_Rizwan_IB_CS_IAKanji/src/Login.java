@@ -12,6 +12,7 @@ public class Login extends javax.swing.JDialog {
     /**
      * Creates new form Login
      */
+    Main Login = new Main();
     public Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -137,13 +138,11 @@ public class Login extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public String username;
-    public String password;
     
     
     private void jMenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuLoginMenuSelected
         // TODO add your handling code here:
-
+        
         
     }//GEN-LAST:event_jMenuLoginMenuSelected
 
@@ -154,8 +153,6 @@ public class Login extends javax.swing.JDialog {
     private void ButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoginActionPerformed
         // TODO add your handling code here:
         
-        username = TextFieldUsername.getText();
-        password = TextFieldPassword.getText();
         // user main.findUser to find user etc.
         
     }//GEN-LAST:event_ButtonLoginActionPerformed
@@ -207,6 +204,8 @@ public class Login extends javax.swing.JDialog {
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonLogin;
