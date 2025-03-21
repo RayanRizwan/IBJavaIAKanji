@@ -12,8 +12,19 @@ public class HomePage extends javax.swing.JFrame {
     /**
      * Creates new form Kanji_IA_UI
      */
+    String language;
+    User currentUser;
     public HomePage() {
         initComponents();
+        if (currentUser == null){
+            language = "English";
+        }
+        
+        if (currentUser.language.equals("Japanese")){
+            LabelWelcome.setText("ようこそ");
+            labelLearnJapanese.setText("母語のような習い事");
+            
+        }
     }
 
     /**
@@ -27,44 +38,36 @@ public class HomePage extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        ButtonFlashcards = new javax.swing.JButton();
-        ButtonPassages = new javax.swing.JButton();
-        ButtonVocabList = new javax.swing.JButton();
+        LabelWelcome = new javax.swing.JLabel();
         jLabelBestLabelOpportunities = new javax.swing.JLabel();
-        jLabelLearnJapanese = new javax.swing.JLabel();
+        labelLearnJapanese = new javax.swing.JLabel();
+        ButtonPassages = new javax.swing.JButton();
+        ButtonFlashcards = new javax.swing.JButton();
+        ButtonPassages1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
         MenuAbout = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        MenuExit = new javax.swing.JMenu();
+        MenuSignUp = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        ButtonFlashcards.setText("Flashcards");
-        ButtonFlashcards.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonFlashcardsActionPerformed(evt);
-            }
-        });
-
-        ButtonPassages.setText("Passages");
-
-        ButtonVocabList.setText("Vocab List");
-        ButtonVocabList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonVocabListActionPerformed(evt);
-            }
-        });
+        LabelWelcome.setText("Welcome!");
 
         jLabelBestLabelOpportunities.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
         jLabelBestLabelOpportunities.setText("日本語学者");
 
-        jLabelLearnJapanese.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jLabelLearnJapanese.setText("Learn Japanese as if it's your native tongue");
+        labelLearnJapanese.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        labelLearnJapanese.setText("Learn Japanese as if it's your native tongue");
+
+        ButtonPassages.setText("Passages");
+
+        ButtonFlashcards.setText("Flashcards");
+
+        ButtonPassages1.setText("Vocab List");
 
         jMenuBar1.setBackground(new java.awt.Color(205, 235, 217));
         jMenuBar1.setAutoscrolls(true);
@@ -73,7 +76,7 @@ public class HomePage extends javax.swing.JFrame {
         jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
         jMenuBar1.add(jMenu1);
 
-        MenuLogin.setText("Sign Out");
+        MenuLogin.setText("Login");
         MenuLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
         MenuLogin.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
@@ -95,14 +98,18 @@ public class HomePage extends javax.swing.JFrame {
         MenuAbout.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jMenuBar1.add(MenuAbout);
 
-        jMenu2.setText("Name");
-        jMenu2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
-        jMenuBar1.add(jMenu2);
-        jMenu2.getAccessibleContext().setAccessibleName("MenuUsername");
-
-        MenuExit.setText("Exit");
-        MenuExit.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        jMenuBar1.add(MenuExit);
+        MenuSignUp.setText("Sign Up");
+        MenuSignUp.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        MenuSignUp.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                MenuSignUpMenuSelected(evt);
+            }
+        });
+        jMenuBar1.add(MenuSignUp);
 
         setJMenuBar(jMenuBar1);
 
@@ -111,43 +118,47 @@ public class HomePage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ButtonFlashcards)
-                        .addGap(33, 33, 33)
-                        .addComponent(ButtonPassages)
-                        .addGap(30, 30, 30)
-                        .addComponent(ButtonVocabList))
-                    .addComponent(jLabelBestLabelOpportunities)
-                    .addComponent(jLabelLearnJapanese))
-                .addContainerGap(334, Short.MAX_VALUE))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelBestLabelOpportunities)
+                            .addComponent(LabelWelcome)
+                            .addComponent(labelLearnJapanese)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(303, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(52, 52, 52)
+                .addComponent(LabelWelcome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelBestLabelOpportunities, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelLearnJapanese, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(labelLearnJapanese, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonVocabList, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(67, Short.MAX_VALUE))
+                    .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonFlashcardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFlashcardsActionPerformed
+    private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonFlashcardsActionPerformed
-
-    private void ButtonVocabListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVocabListActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonVocabListActionPerformed
+        Sign_Up l = new Sign_Up(this, true);
+        l.setVisible(true);
+    }//GEN-LAST:event_MenuSignUpMenuSelected
 
     private void MenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuLoginActionPerformed
         // TODO add your handling code here:
@@ -177,20 +188,21 @@ public class HomePage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Kanji_IA_UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Kanji_IA_UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Kanji_IA_UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Kanji_IA_UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Kanji_IA_UI().setVisible(true);
+                new HomePage().setVisible(true);
             }
         });
     }
@@ -198,16 +210,16 @@ public class HomePage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonFlashcards;
     private javax.swing.JButton ButtonPassages;
-    private javax.swing.JButton ButtonVocabList;
+    private javax.swing.JButton ButtonPassages1;
+    private javax.swing.JLabel LabelWelcome;
     private javax.swing.JMenu MenuAbout;
-    private javax.swing.JMenu MenuExit;
     private javax.swing.JMenu MenuLogin;
+    private javax.swing.JMenu MenuSignUp;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabelBestLabelOpportunities;
-    private javax.swing.JLabel jLabelLearnJapanese;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JLabel labelLearnJapanese;
     // End of variables declaration//GEN-END:variables
 }

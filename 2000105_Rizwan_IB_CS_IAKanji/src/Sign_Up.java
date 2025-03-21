@@ -374,8 +374,7 @@ public class Sign_Up extends javax.swing.JDialog {
             main.currentUser = x;
         }
        
-        HomePage HP = new HomePage();
-        HP.setVisible(true);
+       
         
     }//GEN-LAST:event_ButtonSignUpActionPerformed
 
