@@ -12,7 +12,7 @@ public class Login extends javax.swing.JDialog {
     /**
      * Creates new form Login
      */
-    Main Login = new Main();
+    Main main = Main.getInstance();
     public Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -154,6 +154,20 @@ public class Login extends javax.swing.JDialog {
         // TODO add your handling code here:
         
         // user main.findUser to find user etc.
+        
+        String username = TextFieldUsername.getText();
+        String password = TextFieldPassword.getText();
+        
+        for (int i = 0; i < main.Students.size(); i++) {
+            if ((main.Students.get(i).getUsername().equals(username)) && 
+                    (main.Students.get(i).getPassword().equals(password))){
+                main.currentUser = main.Students.get(i);
+                
+            }
+            else{
+                
+            }
+        }
         
     }//GEN-LAST:event_ButtonLoginActionPerformed
 

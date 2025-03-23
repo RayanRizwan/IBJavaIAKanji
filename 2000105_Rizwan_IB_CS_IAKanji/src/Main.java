@@ -11,13 +11,22 @@ import java.util.ArrayList;
  * @author 2000105
  */
 public class Main {
+    
+    private static Main instance = new Main();
 
-    public ArrayList<Student> Students;
-    public ArrayList<Teacher> Teacher;
+    public static ArrayList<Student> Students = new ArrayList<>();
+    public static ArrayList<Teacher> Teacher = new ArrayList<>();
     User currentUser;
     
-    public static void main(String[] args){
+    public static void main(){
         
+    }
+    
+    private Main() {}
+
+    // Method to access the single instance
+    public static Main getInstance() {
+        return instance;
     }
     
     public void addStudents(Student e){
