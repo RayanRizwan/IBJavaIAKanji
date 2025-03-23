@@ -7,24 +7,34 @@
  *
  * @author 2000105
  */
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 public class HomePage extends javax.swing.JFrame {
 
     /**
      * Creates new form Kanji_IA_UI
      */
-    String language;
+    public static Locale locale;
     User currentUser;
     public HomePage() {
         initComponents();
-        if (currentUser == null){
-            language = "English";
-        }
+
         
         if (currentUser.language.equals("Japanese")){
-            LabelWelcome.setText("ようこそ");
-            labelLearnJapanese.setText("母語のような習い事");
-            
+            // sets locale to English or Japanese depending on user preferences
+            Locale locale = new Locale("jp");
         }
+        else{
+            Locale locale = new Locale("en");
+        }
+        
+        ResourceBundle messages = ResourceBundle.getBundle("messages", locale);
+        
+        LabelWelcome.setText(messages.getString("Welcome"));
+        labelLearnJapanese.setText(messages.getString("LearnJapanese"));
+        
     }
 
     /**
