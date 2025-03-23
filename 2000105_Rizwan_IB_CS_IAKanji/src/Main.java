@@ -70,5 +70,31 @@ public class Main {
         }
         return null;
     }
+
+    public static ArrayList<Student> getStudents() {
+        return Students;
+    }
+
+    public static void setStudents(ArrayList<Student> Students) {
+        Main.Students = Students;
+    }
+
+    public static ArrayList<Teacher> getTeacher() {
+        return Teacher;
+    }
+
+    public static void setTeacher(ArrayList<Teacher> Teacher) {
+        Main.Teacher = Teacher;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
+    }
+    
+    
 }
 

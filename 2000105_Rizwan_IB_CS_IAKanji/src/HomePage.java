@@ -17,7 +17,9 @@ public class HomePage extends javax.swing.JFrame {
      * Creates new form Kanji_IA_UI
      */
     public static Locale locale;
-    User currentUser;
+    Main main = Main.getInstance();
+    
+    User currentUser = main.getCurrentUser();
     public HomePage() {
         initComponents();
 
