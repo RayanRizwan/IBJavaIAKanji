@@ -118,10 +118,12 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="labelLearnJapanese" min="-2" pref="101" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="ButtonPassages" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="ButtonFlashcards" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="ButtonPassages1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="ButtonPassages" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="ButtonPassages1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
