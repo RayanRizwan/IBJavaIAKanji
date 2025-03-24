@@ -78,6 +78,11 @@ public class HomePage extends javax.swing.JFrame {
         ButtonPassages.setText("Passages");
 
         ButtonFlashcards.setText("Flashcards");
+        ButtonFlashcards.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonFlashcardsActionPerformed(evt);
+            }
+        });
 
         ButtonPassages1.setText("Vocab List");
 
@@ -183,6 +188,12 @@ public class HomePage extends javax.swing.JFrame {
         Login l = new Login(this, true);
         l.setVisible(true);
     }//GEN-LAST:event_MenuLoginMenuSelected
+
+    private void ButtonFlashcardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFlashcardsActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_ButtonFlashcardsActionPerformed
 
     /**
      * @param args the command line arguments

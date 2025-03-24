@@ -55,6 +55,8 @@ public class Sign_Up extends javax.swing.JDialog {
         jMenuLogin1 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         TextFieldPassword = new javax.swing.JPasswordField();
         ButtonSignUp = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -162,18 +164,23 @@ public class Sign_Up extends javax.swing.JDialog {
 
         jLabel2.setText("Password");
 
+        buttonGroup2.add(RadioButtonSL);
         RadioButtonSL.setText("Standard Level");
 
+        buttonGroup2.add(RadioButtonHL);
         RadioButtonHL.setText("Higher Level");
 
+        buttonGroup2.add(RadioButtonJoyo);
         RadioButtonJoyo.setText("Joyo Kanji");
 
         jLabel3.setText("Level");
 
         jLabel4.setText("User type");
 
+        buttonGroup1.add(jRadioButtonTeacher);
         jRadioButtonTeacher.setText("Teacher");
 
+        buttonGroup1.add(RadioButtonStudent);
         RadioButtonStudent.setText("Student");
 
         ComboBoxLanguage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -488,6 +495,8 @@ public class Sign_Up extends javax.swing.JDialog {
     private javax.swing.JPasswordField TextFieldPassphrase;
     private javax.swing.JPasswordField TextFieldPassword;
     private javax.swing.JTextField TextFieldUsername;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
