@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import javax.swing.JDialog;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -148,6 +149,8 @@ public class Sign_Up extends javax.swing.JDialog {
         jMenuBar2.add(jMenu6);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("SignUp");
+        setName("SignUp"); // NOI18N
 
         TextFieldPassword.setText("jPasswordField1");
 
@@ -382,8 +385,8 @@ public class Sign_Up extends javax.swing.JDialog {
             x.teacher.addStudentstoClass(x);
             main.currentUser = x;
         }
-       
-       
+        
+        ExitSignUp(this);
         
     }//GEN-LAST:event_ButtonSignUpActionPerformed
 
@@ -441,6 +444,10 @@ public class Sign_Up extends javax.swing.JDialog {
        
         
         return new Student(level, Kanji, VocabList, x, username, password, passphrase, language);
+   }
+   
+   private void ExitSignUp(Sign_Up l){
+       l.setVisible(false);
    }
     /**
      * @param args the command line arguments

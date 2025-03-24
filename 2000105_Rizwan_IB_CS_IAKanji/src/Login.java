@@ -32,6 +32,7 @@ public class Login extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         TextFieldPassword = new javax.swing.JPasswordField();
         ButtonLogin = new javax.swing.JButton();
+        LabelError = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuLogin = new javax.swing.JMenu();
@@ -112,7 +113,8 @@ public class Login extends javax.swing.JDialog {
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel2)
+                            .addComponent(LabelError))
                         .addGap(96, 96, 96)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(TextFieldUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
@@ -130,9 +132,11 @@ public class Login extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(TextFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(LabelError)
+                .addGap(32, 32, 32)
                 .addComponent(ButtonLogin)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(54, 54, 54))
         );
 
         pack();
@@ -157,7 +161,7 @@ public class Login extends javax.swing.JDialog {
         
         String username = TextFieldUsername.getText();
         String password = TextFieldPassword.getText();
-        
+        int errors = 0;
         for (int i = 0; i < main.Students.size(); i++) {
             if ((main.Students.get(i).getUsername().equals(username)) && 
                     (main.Students.get(i).getPassword().equals(password))){
@@ -165,10 +169,13 @@ public class Login extends javax.swing.JDialog {
                 
             }
             else{
-                
+                LabelError.setText("A user with these login details cannot be found. Please try again. ");
+
             }
+            
         }
         
+        ExitLogin(this);
     }//GEN-LAST:event_ButtonLoginActionPerformed
 
     private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
@@ -219,10 +226,13 @@ public class Login extends javax.swing.JDialog {
         });
     }
     
-    
+    private void ExitLogin(Login l){
+       l.setVisible(false);
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonLogin;
+    private javax.swing.JLabel LabelError;
     private javax.swing.JMenu MenuAbout;
     private javax.swing.JMenu MenuSignUp;
     private javax.swing.JPasswordField TextFieldPassword;
