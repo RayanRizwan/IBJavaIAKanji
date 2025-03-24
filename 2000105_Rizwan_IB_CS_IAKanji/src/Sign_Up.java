@@ -1,4 +1,7 @@
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -490,9 +493,35 @@ public class Sign_Up extends javax.swing.JDialog {
             }
         });
     }
-       
-    private void setKanjiList(User l){
+    
+
+    
+    private void setKanjiList(Student l){
+        String csvFile = "heisig-kanjis";
+        String line;
+        String delimiter = ",";
         
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            // Read the file line by line
+            while ((line = br.readLine()) != null) {
+                // Split the line by the delimiter
+                String[] data = line.split(delimiter);
+
+                // Process the data (e.g., print it)
+                if(l.level == "Joyo"){
+                    for (int i = 0; i < data.length; i++) {
+                        l.Kanji.get(i).setIndex(Integer.parseInt(data[2]));
+                        
+                    }
+                    System.out.println(); 
+                    // Move to the next line
+                }
+                
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonSignUp;
