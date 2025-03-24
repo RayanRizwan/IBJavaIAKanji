@@ -490,7 +490,10 @@ public class Sign_Up extends javax.swing.JDialog {
             }
         });
     }
-
+       
+    private void setKanjiList(User l){
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonSignUp;
     private javax.swing.JComboBox<String> ComboBoxLanguage;
