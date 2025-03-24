@@ -14,8 +14,8 @@ public class Main {
     
     private static Main instance = new Main();
 
-    public static ArrayList<Student> Students = new ArrayList<>();
-    public static ArrayList<Teacher> Teacher = new ArrayList<>();
+    public ArrayList<Student> Students = new ArrayList<>();
+    public ArrayList<Teacher> Teacher = new ArrayList<>();
     User currentUser;
     
     public static void main(){
@@ -71,20 +71,20 @@ public class Main {
         return null;
     }
 
-    public static ArrayList<Student> getStudents() {
+    public ArrayList<Student> getStudents() {
         return Students;
     }
 
-    public static void setStudents(ArrayList<Student> Students) {
-        Main.Students = Students;
+    public void setStudents(ArrayList<Student> Students) {
+        instance.Students = Students;
     }
 
-    public static ArrayList<Teacher> getTeacher() {
+    public ArrayList<Teacher> getTeacher() {
         return Teacher;
     }
 
-    public static void setTeacher(ArrayList<Teacher> Teacher) {
-        Main.Teacher = Teacher;
+    public void setTeacher(ArrayList<Teacher> Teacher) {
+        instance.Teacher = Teacher;
     }
 
     public User getCurrentUser() {
