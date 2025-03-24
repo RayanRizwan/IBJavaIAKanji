@@ -510,8 +510,11 @@ public class Sign_Up extends javax.swing.JDialog {
                 // Process the data (e.g., print it)
                 if(l.level == "Joyo"){
                     for (int i = 0; i < data.length; i++) {
-                        l.Kanji.get(i).setIndex(Integer.parseInt(data[2]));
-                        
+                        l.Kanji.get(i).setIndex(Integer.parseInt(data[1]));
+                        l.Kanji.get(i).setKanji(data[0]);
+                        l.Kanji.get(i).setMeaning(data[3]);
+                        l.Kanji.get(i).setKunyomi(data[7]);
+                        l.Kanji.get(i).setOnyomi(data[6]);
                     }
                     System.out.println(); 
                     // Move to the next line
