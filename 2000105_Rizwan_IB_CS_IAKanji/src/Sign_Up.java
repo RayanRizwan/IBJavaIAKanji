@@ -385,7 +385,7 @@ public class Sign_Up extends javax.swing.JDialog {
             x.teacher.addStudentstoClass(x);
             main.currentUser = x;
         }
-        
+
         ExitSignUp(this);
         
     }//GEN-LAST:event_ButtonSignUpActionPerformed

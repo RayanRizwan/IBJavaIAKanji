@@ -37,6 +37,7 @@ public class HomePage extends javax.swing.JFrame {
         LabelWelcome.setText(messages.getString("Welcome"));
         labelLearnJapanese.setText(messages.getString("LearnJapanese"));
         
+        
     }
 
     /**
@@ -230,7 +231,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonFlashcards;
     private javax.swing.JButton ButtonPassages;

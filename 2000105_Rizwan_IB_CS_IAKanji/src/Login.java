@@ -161,7 +161,6 @@ public class Login extends javax.swing.JDialog {
         
         String username = TextFieldUsername.getText();
         String password = TextFieldPassword.getText();
-        int errors = 0;
         for (int i = 0; i < main.Students.size(); i++) {
             if ((main.Students.get(i).getUsername().equals(username)) && 
                     (main.Students.get(i).getPassword().equals(password))){
@@ -170,11 +169,10 @@ public class Login extends javax.swing.JDialog {
             }
             else{
                 LabelError.setText("A user with these login details cannot be found. Please try again. ");
-
             }
             
         }
-        
+
         ExitLogin(this);
     }//GEN-LAST:event_ButtonLoginActionPerformed
 
