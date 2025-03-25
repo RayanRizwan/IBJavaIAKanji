@@ -25,20 +25,22 @@ public class Flashcards extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
+        MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
-        MenuAbout = new javax.swing.JMenu();
         MenuSignUp = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        MenuAbout = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenuBar1.setBackground(new java.awt.Color(205, 235, 217));
-        jMenuBar1.setAutoscrolls(true);
+        MenuBar.setBackground(new java.awt.Color(205, 235, 217));
+        MenuBar.setAutoscrolls(true);
+        MenuBar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
 
         jMenu1.setText("漢字");
         jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
-        jMenuBar1.add(jMenu1);
+        MenuBar.add(jMenu1);
 
         MenuLogin.setText("Login");
         MenuLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
@@ -56,11 +58,7 @@ public class Flashcards extends javax.swing.JFrame {
                 MenuLoginActionPerformed(evt);
             }
         });
-        jMenuBar1.add(MenuLogin);
-
-        MenuAbout.setText("About");
-        MenuAbout.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        jMenuBar1.add(MenuAbout);
+        MenuBar.add(MenuLogin);
 
         MenuSignUp.setText("Sign Up");
         MenuSignUp.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
@@ -73,9 +71,16 @@ public class Flashcards extends javax.swing.JFrame {
                 MenuSignUpMenuSelected(evt);
             }
         });
-        jMenuBar1.add(MenuSignUp);
+        MenuBar.add(MenuSignUp);
 
-        setJMenuBar(jMenuBar1);
+        jMenu2.setText("User");
+        MenuBar.add(jMenu2);
+
+        MenuAbout.setText("About");
+        MenuAbout.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        MenuBar.add(MenuAbout);
+
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -144,9 +149,10 @@ public class Flashcards extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu MenuAbout;
+    private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MenuLogin;
     private javax.swing.JMenu MenuSignUp;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenu2;
     // End of variables declaration//GEN-END:variables
 }

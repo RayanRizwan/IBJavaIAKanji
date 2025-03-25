@@ -1,6 +1,7 @@
 
 
 
+import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -105,6 +106,15 @@ public class App {
         this.currentUser = currentUser;
     }
     
+    public void OpenSign_Up(Frame L){
+        Sign_Up l = new Sign_Up(L, true);
+        l.setVisible(true);
+    }
+    
+    public void OpenLogin(Frame L){
+        Login l = new Login(L, true);
+        l.setVisible(true);
+    }
     
 }
 
