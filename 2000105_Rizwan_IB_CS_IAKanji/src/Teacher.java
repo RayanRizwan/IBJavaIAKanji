@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public class Teacher extends User {
     
-    ArrayList<Student> Students;
-    ArrayList<String> Curriculum;
+    ArrayList<Student> Students = new ArrayList();
+    ArrayList<String> Curriculum = new ArrayList();
     String ClassCode;
     
     public Teacher(String username, String password, String passphrase, String language) {
@@ -23,9 +23,9 @@ public class Teacher extends User {
 
     public Teacher(ArrayList<Student> Students, ArrayList<String> Curriculum, String username, String password, String passphrase, String language, String ClassCode) {
         super(username, password, passphrase, language);
-        this.Students = Students;
-        this.Curriculum = Curriculum;
-        this.ClassCode = ClassCode;
+        Students = this.Students;
+        Curriculum = this.Curriculum;
+        ClassCode = this.ClassCode;
     }
 
     public ArrayList<Student> getStudents() {

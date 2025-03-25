@@ -21,7 +21,8 @@ public class App {
     public static ArrayList<Student> Students = new ArrayList<>();
     public static ArrayList<Teacher> Teacher = new ArrayList<>();
     private static ArrayList<Student> StudentsFake = new ArrayList<>();
-
+    // StudentsFake is essentially a burner students arrayList to send anyone without a class to
+    
     Teacher non = new Teacher(StudentsFake, null, null, null, null, null, "000AAA"); 
     // Teacher non allows for a fake teacher to be created for any students without a classcode
     User currentUser;
