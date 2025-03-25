@@ -16,21 +16,22 @@ public class HomePage extends javax.swing.JFrame {
     /**
      * Creates new form Kanji_IA_UI
      */
-    public static Locale locale;
-    Main main = Main.getInstance();
+    public Locale locale = Locale.ENGLISH;
+    Main main = Main.getInstance(); // ensures that I can have a singular instance of main for the entire application 
+    //  based on who the current user is
     
     User currentUser = main.getCurrentUser();
     public HomePage() {
         initComponents();
 
         
-        if (currentUser.language.equals("Japanese")){
+        
+        if (currentUser != null && "Japanese".equals(currentUser.language)){
             // sets locale to English or Japanese depending on user preferences
-            Locale locale = new Locale("jp");
+            locale = Locale.JAPANESE; // sets the locale to Japanese
         }
-        else{
-            Locale locale = new Locale("en");
-        }
+
+        
         
         ResourceBundle messages = ResourceBundle.getBundle("messages", locale);
         
