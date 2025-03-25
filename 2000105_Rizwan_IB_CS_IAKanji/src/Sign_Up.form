@@ -396,7 +396,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Class Code"/>
+        <Property name="text" type="java.lang.String" value="Class Code (if you have no teacher, type in 000AAA)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">

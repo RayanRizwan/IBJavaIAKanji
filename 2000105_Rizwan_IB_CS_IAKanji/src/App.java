@@ -1,5 +1,8 @@
 
+
+
 import java.util.ArrayList;
+import java.util.Locale;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -10,30 +13,37 @@ import java.util.ArrayList;
  *
  * @author 2000105
  */
-public class Main {
+public class App {
     
-    private static Main instance = new Main();
+    private static App instance = new App();
 
     public ArrayList<Student> Students = new ArrayList<>();
     public ArrayList<Teacher> Teacher = new ArrayList<>();
+    private ArrayList<Student> StudentsFake = new ArrayList<>();
+
+    Teacher non = new Teacher(StudentsFake, null, null, null, null, null, "000AAA"); 
+    // Teacher non allows for a fake teacher to be created for any students without a classcode
     User currentUser;
+    public Locale locale = Locale.ENGLISH;
     
     public static void main(){
         
     }
     
-    private Main() {}
+    private App() {}
 
     // Method to access the single instance
-    public static Main getInstance() {
+   public static App getInstance() {
+        if (instance == null) {
+            instance = new App();
+            // ensures that if the instance does not exist, an instance is created
+        }
         return instance;
     }
     
     public void addStudents(Student e){
         // ClassCode allows a Student to find their teacher after the teacher has created one
-        
         Students.add(e);
-
     }
     
     public void addTeacher(Teacher e){
@@ -50,7 +60,7 @@ public class Main {
                 return Teacher.get(i);
             }
         }
-        return null;
+        return non;
     }
     
     public User findUser(String username){

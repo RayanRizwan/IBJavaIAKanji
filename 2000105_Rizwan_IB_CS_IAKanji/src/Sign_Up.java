@@ -1,4 +1,5 @@
 
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class Sign_Up extends javax.swing.JDialog {
     public String classCode;
     public boolean student;
     public boolean teacher;
-    Main main = Main.getInstance();
+    App main = App.getInstance();
     
     public Sign_Up(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -196,7 +197,7 @@ public class Sign_Up extends javax.swing.JDialog {
             }
         });
 
-        jLabel5.setText("Class Code");
+        jLabel5.setText("Class Code (if you have no teacher, type in 000AAA)");
 
         jLabel6.setText("Preferred Language");
 
@@ -388,8 +389,14 @@ public class Sign_Up extends javax.swing.JDialog {
             x.teacher.addStudentstoClass(x);
             main.currentUser = x;
         }
-
+        
+        if (language.equals("Japanese")){
+            main.locale = Locale.JAPAN;
+        }
+        
+        
         ExitSignUp(this);
+        
         
     }//GEN-LAST:event_ButtonSignUpActionPerformed
 

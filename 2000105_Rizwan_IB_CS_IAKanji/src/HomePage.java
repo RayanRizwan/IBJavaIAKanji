@@ -1,3 +1,8 @@
+
+
+
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -6,20 +11,21 @@
 /**
  *
  * @author 2000105
- */
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
-public class HomePage extends javax.swing.JFrame {
 
     /**
      * Creates new form Kanji_IA_UI
      */
-    public Locale locale = Locale.ENGLISH;
-    Main main = Main.getInstance(); // ensures that I can have a singular instance of main for the entire application 
-    //  based on who the current user is
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
+
+public class HomePage extends javax.swing.JFrame {
+
     
+    App main = App.getInstance(); // ensures that I can have a singular instance of main for the entire application 
+    //  based on who the current user is
     User currentUser = main.getCurrentUser();
     public HomePage() {
         initComponents();
@@ -28,18 +34,26 @@ public class HomePage extends javax.swing.JFrame {
         
         if (currentUser != null && "Japanese".equals(currentUser.language)){
             // sets locale to English or Japanese depending on user preferences
-            locale = Locale.JAPANESE; // sets the locale to Japanese
+            main.locale = Locale.JAPAN; // sets the locale to Japan, allowing access 
+            // to country code but also Japanese language stuff
         }
+
+        try{
+           ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
+            LabelWelcome.setText(messages.getString("Welcome"));
+            labelLearnJapanese.setText(messages.getString("LearnJapanese"));  
+        }
+        catch (MissingResourceException e) {
+            // Fallback to default values if bundle not found
+            LabelWelcome.setText("Welcome");
+            labelLearnJapanese.setText("Learn Japanese like a Native Speaker");
+            System.err.println("Resource bundle missing: " + e.getMessage());
+        }
+        
 
         
         
-        ResourceBundle messages = ResourceBundle.getBundle("messages", locale);
-        
-        LabelWelcome.setText(messages.getString("Welcome"));
-        labelLearnJapanese.setText(messages.getString("LearnJapanese"));
-        
-        
-}
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

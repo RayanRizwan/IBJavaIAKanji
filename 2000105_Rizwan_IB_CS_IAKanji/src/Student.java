@@ -16,7 +16,7 @@ public class Student extends User {
     ArrayList<Kanji> Kanji;
     ArrayList<Word> Vocab;
     Teacher teacher;
-
+    App main = App.getInstance();
     
     public Student(String username, String password, String passphrase, String language, Teacher teacher) {
         super(username, password, passphrase, language);
@@ -70,5 +70,6 @@ public class Student extends User {
         this.language = language;
     }
     
+
     
 }

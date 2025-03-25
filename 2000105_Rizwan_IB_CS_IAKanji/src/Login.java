@@ -1,3 +1,5 @@
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
@@ -12,7 +14,7 @@ public class Login extends javax.swing.JDialog {
     /**
      * Creates new form Login
      */
-    Main main = Main.getInstance();
+    App main = App.getInstance();
     public Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
