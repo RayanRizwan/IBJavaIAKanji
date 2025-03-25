@@ -39,12 +39,13 @@ public class HomePage extends javax.swing.JFrame {
         }
 
         try{
+            // checks that if a locale has been set then the language changes to the necessary language
            ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
             LabelWelcome.setText(messages.getString("Welcome"));
             labelLearnJapanese.setText(messages.getString("LearnJapanese"));  
         }
         catch (MissingResourceException e) {
-            // Fallback to default values if bundle not found
+            // Fallback to default values (English) if bundle not found
             LabelWelcome.setText("Welcome");
             labelLearnJapanese.setText("Learn Japanese like a Native Speaker");
             System.err.println("Resource bundle missing: " + e.getMessage());

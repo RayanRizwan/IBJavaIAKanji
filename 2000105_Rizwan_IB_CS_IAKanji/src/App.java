@@ -18,9 +18,9 @@ public class App {
     
     private static App instance = new App();
 
-    public ArrayList<Student> Students = new ArrayList<>();
-    public ArrayList<Teacher> Teacher = new ArrayList<>();
-    private ArrayList<Student> StudentsFake = new ArrayList<>();
+    public static ArrayList<Student> Students = new ArrayList<>();
+    public static ArrayList<Teacher> Teacher = new ArrayList<>();
+    private static ArrayList<Student> StudentsFake = new ArrayList<>();
 
     Teacher non = new Teacher(StudentsFake, null, null, null, null, null, "000AAA"); 
     // Teacher non allows for a fake teacher to be created for any students without a classcode
@@ -35,10 +35,7 @@ public class App {
 
     // Method to access the single instance
    public static App getInstance() {
-        if (instance == null) {
-            instance = new App();
-            // ensures that if the instance does not exist, an instance is created
-        }
+
         return instance;
     }
     
