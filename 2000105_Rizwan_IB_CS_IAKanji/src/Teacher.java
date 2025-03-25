@@ -17,6 +17,10 @@ public class Teacher extends User {
     ArrayList<String> Curriculum = new ArrayList();
     String ClassCode;
     
+    public Teacher(){
+        // Empty constructor to ensure values are not null
+        super();
+    }
     public Teacher(String username, String password, String passphrase, String language) {
         super(username, password, passphrase, language);
     }
