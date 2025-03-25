@@ -39,7 +39,7 @@ public class HomePage extends javax.swing.JFrame {
         labelLearnJapanese.setText(messages.getString("LearnJapanese"));
         
         
-    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
