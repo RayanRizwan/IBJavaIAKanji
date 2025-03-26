@@ -174,6 +174,7 @@ public class UserSettings extends javax.swing.JDialog {
     private void ButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveActionPerformed
         // TODO add your handling code here:
         main.changeLocale(ComboBoxLanguageChange.getSelectedItem().toString());
+        this.setVisible(false);
     }//GEN-LAST:event_ButtonSaveActionPerformed
 
     /**

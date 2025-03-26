@@ -25,7 +25,10 @@ public class App {
     
     Teacher non = new Teacher(StudentsFake, null, null, null, null, null, "000AAA"); 
     // Teacher non allows for a fake teacher to be created for any students without a classcode
-    User currentUser;
+
+    Student currentStudent = new Student();
+    Teacher currentTeacher = new Teacher();
+ 
     public Locale locale = Locale.ENGLISH;
     
     public static void main(){
@@ -96,14 +99,30 @@ public class App {
         instance.Teacher = Teacher;
     }
 
-    public User getCurrentUser() {
-        return currentUser;
+    public Student getCurrentStudent() {
+        return currentStudent;
     }
 
-    public void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
+    public void setCurrentStudent(Student currentStudent) {
+        this.currentStudent = currentStudent;
     }
-    
+
+    public Teacher getCurrentTeacher() {
+        return currentTeacher;
+    }
+
+    public void setCurrentTeacher(Teacher currentTeacher) {
+        this.currentTeacher = currentTeacher;
+    }
+
+    public Locale getLocale() {
+        return locale;
+    }
+
+    public void setLocale(Locale locale) {
+        this.locale = locale;
+    }
+
     public void OpenSign_Up(Frame L){
         Sign_Up l = new Sign_Up(L, true);
         l.setVisible(true);
@@ -114,6 +133,12 @@ public class App {
         l.setVisible(true);
     }
     
+    public void openUserSettings(Frame L){
+        UserSettings l = new UserSettings(L, true);
+        l.setVisible(true);
+    }
+    
+    
     public void changeLocale(String language){
         if (language.equals("Japanese")){
             locale = Locale.JAPAN;
@@ -122,5 +147,6 @@ public class App {
             locale = Locale.ENGLISH;
         }
     }
+    
 }
 

@@ -380,14 +380,18 @@ public class Sign_Up extends javax.swing.JDialog {
         if (teacher){
             Teacher x = createTeacher(username, password, passphrase, language, classCode);
             main.addTeacher(x);
-            main.currentUser = x;
+            main.currentTeacher = x;
+            main.currentStudent = null;
         }
         else if (student){
             Student x = createStudent(level, username, password, passphrase, language, classCode);
             main.addStudents(x);
             // adds student to the teacher's class
             (x.teacher).addStudentstoClass(x);
-            main.currentUser = x;
+            main.currentStudent = x;
+            // ensures there is only one user at a time, regardless of 
+            // whether they are a student or teacher
+            main.currentTeacher = null;
         }
         
         if (language.equals("Japanese")){

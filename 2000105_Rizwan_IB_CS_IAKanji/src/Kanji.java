@@ -21,19 +21,21 @@ public class Kanji {
     String Kunyomi = "";
     String Onyomi = "";
     String level = "";
+    boolean known = false;
     
     public Kanji(){
         // Empty constructor to allow for initialised values in other things
     }
     
     public Kanji(int index, String kanji, String meaning, String Kunyomi, 
-            String Onyomi, String Level){
+            String Onyomi, String Level, boolean known){
         kanji = this.kanji;
         index = this.index;
         meaning = this.meaning;
         Kunyomi = this.Kunyomi;
         Onyomi = this.Onyomi;
         Level = this.level;
+        known = this.known;
     }
 
     public String getKanji() {

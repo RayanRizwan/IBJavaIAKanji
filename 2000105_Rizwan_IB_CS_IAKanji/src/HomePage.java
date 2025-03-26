@@ -26,15 +26,15 @@ public class HomePage extends javax.swing.JFrame {
     
     App main = App.getInstance(); // ensures that I can have a singular instance of main for the entire application 
     //  based on who the current user is
-    User currentUser = main.getCurrentUser();
+    Student currentStudent = main.getCurrentStudent();
     public HomePage() {
         initComponents();
 
         
         
-        if (currentUser != null){
+        if (currentStudent != null){
             // sets locale to English or Japanese depending on user preferences
-            main.changeLocale(currentUser.language); // sets the locale to Japan, allowing access 
+            main.changeLocale(currentStudent.language); // sets the locale to Japan, allowing access 
             // to country code but also Japanese language stuff
         }
 
@@ -144,6 +144,15 @@ public class HomePage extends javax.swing.JFrame {
         MenuBar.add(MenuSignUp);
 
         jMenu2.setText("User");
+        jMenu2.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu2MenuSelected(evt);
+            }
+        });
         MenuBar.add(jMenu2);
 
         MenuAbout.setText("About");
@@ -214,6 +223,11 @@ public class HomePage extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_ButtonFlashcardsActionPerformed
+
+    private void jMenu2MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu2MenuSelected
+        // TODO add your handling code here:
+        main.openUserSettings(this);
+    }//GEN-LAST:event_jMenu2MenuSelected
 
     /**
      * @param args the command line arguments
