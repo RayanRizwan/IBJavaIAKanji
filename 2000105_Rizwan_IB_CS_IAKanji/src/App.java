@@ -114,5 +114,13 @@ public class App {
         l.setVisible(true);
     }
     
+    public void changeLocale(String language){
+        if (language.equals("Japanese")){
+            locale = Locale.JAPAN;
+        }
+        else if (language.equals("English")){
+            locale = Locale.ENGLISH;
+        }
+    }
 }
 

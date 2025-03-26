@@ -12,12 +12,13 @@ public class UserSettings extends javax.swing.JDialog {
     /**
      * Creates new form UserSettings
      */
+    App main = App.getInstance();
     public UserSettings(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         
         String[] languages = {"English", "Japanese"};
-        ComboBoxLanguage.setModel(new javax.swing.DefaultComboBoxModel(languages));
+        ComboBoxLanguageChange.setModel(new javax.swing.DefaultComboBoxModel(languages));
     }
 
     /**
@@ -37,7 +38,8 @@ public class UserSettings extends javax.swing.JDialog {
         RadioButtonJoyo = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        ComboBoxLanguage1 = new javax.swing.JComboBox<>();
+        ComboBoxLanguageChange = new javax.swing.JComboBox<>();
+        ButtonSave = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
@@ -69,10 +71,17 @@ public class UserSettings extends javax.swing.JDialog {
 
         jLabel7.setText("Preferred Language");
 
-        ComboBoxLanguage1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        ComboBoxLanguage1.addActionListener(new java.awt.event.ActionListener() {
+        ComboBoxLanguageChange.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComboBoxLanguageChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBoxLanguage1ActionPerformed(evt);
+                ComboBoxLanguageChangeActionPerformed(evt);
+            }
+        });
+
+        ButtonSave.setText("Save");
+        ButtonSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonSaveActionPerformed(evt);
             }
         });
 
@@ -130,20 +139,22 @@ public class UserSettings extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(38, 38, 38)
-                        .addComponent(ComboBoxLanguage1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(48, 48, 48)
-                        .addComponent(RadioButtonSL)
-                        .addGap(38, 38, 38)
-                        .addComponent(RadioButtonHL)
-                        .addGap(41, 41, 41)
-                        .addComponent(RadioButtonJoyo)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addGap(38, 38, 38)
+                            .addComponent(ComboBoxLanguageChange, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addGap(48, 48, 48)
+                            .addComponent(RadioButtonSL)
+                            .addGap(38, 38, 38)
+                            .addComponent(RadioButtonHL)
+                            .addGap(41, 41, 41)
+                            .addComponent(RadioButtonJoyo))))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,9 +167,11 @@ public class UserSettings extends javax.swing.JDialog {
                     .addComponent(jLabel3))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComboBoxLanguage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboBoxLanguageChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         pack();
@@ -182,9 +195,14 @@ public class UserSettings extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBoxLanguageActionPerformed
 
-    private void ComboBoxLanguage1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxLanguage1ActionPerformed
+    private void ComboBoxLanguageChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxLanguageChangeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComboBoxLanguage1ActionPerformed
+    }//GEN-LAST:event_ComboBoxLanguageChangeActionPerformed
+
+    private void ButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveActionPerformed
+        // TODO add your handling code here:
+        main.changeLocale(ComboBoxLanguageChange.getSelectedItem().toString());
+    }//GEN-LAST:event_ButtonSaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,10 +245,12 @@ public class UserSettings extends javax.swing.JDialog {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonSave;
     private javax.swing.JComboBox<String> ComboBoxLanguage;
-    private javax.swing.JComboBox<String> ComboBoxLanguage1;
+    private javax.swing.JComboBox<String> ComboBoxLanguageChange;
     private javax.swing.JMenu MenuAbout;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MenuLogin;

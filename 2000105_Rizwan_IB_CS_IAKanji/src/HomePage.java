@@ -32,9 +32,9 @@ public class HomePage extends javax.swing.JFrame {
 
         
         
-        if (currentUser != null && "Japanese".equals(currentUser.language)){
+        if (currentUser != null){
             // sets locale to English or Japanese depending on user preferences
-            main.locale = Locale.JAPAN; // sets the locale to Japan, allowing access 
+            main.changeLocale(currentUser.language); // sets the locale to Japan, allowing access 
             // to country code but also Japanese language stuff
         }
 
