@@ -25,7 +25,8 @@ public class Flashcards extends javax.swing.JFrame {
             try{
             // checks that if a locale has been set then the language changes to the necessary language
                 ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
-                
+                ButtonCorrect.setText(messages.getString("Correct"));
+                ButtonIncorrect.setText(messages.getString("Incorrect"));
             }
             catch (MissingResourceException e) {
                 // Fallback to default values (English) if bundle not found
@@ -48,7 +49,7 @@ public class Flashcards extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         ButtonCorrect = new javax.swing.JButton();
-        ButtonReview = new javax.swing.JButton();
+        ButtonIncorrect = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
@@ -67,7 +68,7 @@ public class Flashcards extends javax.swing.JFrame {
 
         ButtonCorrect.setText("Correct!");
 
-        ButtonReview.setText("Incorrect");
+        ButtonIncorrect.setText("Incorrect");
 
         MenuBar.setBackground(new java.awt.Color(205, 235, 217));
         MenuBar.setAutoscrolls(true);
@@ -132,7 +133,7 @@ public class Flashcards extends javax.swing.JFrame {
                 .addContainerGap(66, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(ButtonReview, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ButtonIncorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98)
                 .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(156, 156, 156))
@@ -147,7 +148,7 @@ public class Flashcards extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonReview, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ButtonIncorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
 
@@ -207,7 +208,7 @@ public class Flashcards extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonCorrect;
-    private javax.swing.JButton ButtonReview;
+    private javax.swing.JButton ButtonIncorrect;
     private javax.swing.JMenu MenuAbout;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MenuLogin;
