@@ -36,7 +36,7 @@ public class Flashcards extends javax.swing.JFrame {
 
         MenuBar.setBackground(new java.awt.Color(205, 235, 217));
         MenuBar.setAutoscrolls(true);
-        MenuBar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        MenuBar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
 
         jMenu1.setText("漢字");
         jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
