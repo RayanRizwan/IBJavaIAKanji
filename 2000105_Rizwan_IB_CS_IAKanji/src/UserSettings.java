@@ -143,7 +143,7 @@ public class UserSettings extends javax.swing.JDialog {
                     .addComponent(jLabel7))
                 .addGap(30, 30, 30)
                 .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
