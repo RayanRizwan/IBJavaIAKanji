@@ -164,18 +164,19 @@ public class Login extends javax.swing.JDialog {
         String username = TextFieldUsername.getText();
         String password = TextFieldPassword.getText();
         for (int i = 0; i < main.Students.size(); i++) {
-            if ((main.Students.get(i).getUsername().equals(username)) && 
-                    (main.Students.get(i).getPassword().equals(password))){
-                main.currentUser = main.Students.get(i);
-                
-            }
-            else{
+            if ((!main.Students.get(i).getUsername().equals(username)) || 
+                    (!main.Students.get(i).getPassword().equals(password))){
                 LabelError.setText("A user with these login details cannot be found. Please try again. ");
             }
+            else{
+                main.currentUser = main.Students.get(i);
+                ExitLogin(this);
+            }
+            
+            
+            
             
         }
-
-        ExitLogin(this);
     }//GEN-LAST:event_ButtonLoginActionPerformed
 
     private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
