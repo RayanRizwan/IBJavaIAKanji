@@ -13,14 +13,18 @@ import java.util.ArrayList;
 public class Kanji {
     // in the dictionary I use, each Kanji will have an index. The index 
     // is actually dependent on the level of the student
-    private int index;
-    String kanji;
-    String meaning;
+    private int index = 0;
+    String kanji = "";
+    String meaning = "";
     // Kunyomi and Onyomi are specific readings of each character, used in 
     // specific settings
-    String Kunyomi;
-    String Onyomi;
-    String level;
+    String Kunyomi = "";
+    String Onyomi = "";
+    String level = "";
+    
+    public Kanji(){
+        // Empty constructor to allow for initialised values in other things
+    }
     
     public Kanji(int index, String kanji, String meaning, String Kunyomi, 
             String Onyomi, String Level){

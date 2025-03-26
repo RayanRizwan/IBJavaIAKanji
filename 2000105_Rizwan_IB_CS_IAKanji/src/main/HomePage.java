@@ -39,12 +39,13 @@ public class HomePage extends javax.swing.JFrame {
         }
 
         try{
+            // checks that if a locale has been set then the language changes to the necessary language
            ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
             LabelWelcome.setText(messages.getString("Welcome"));
             labelLearnJapanese.setText(messages.getString("LearnJapanese"));  
         }
         catch (MissingResourceException e) {
-            // Fallback to default values if bundle not found
+            // Fallback to default values (English) if bundle not found
             LabelWelcome.setText("Welcome");
             labelLearnJapanese.setText("Learn Japanese like a Native Speaker");
             System.err.println("Resource bundle missing: " + e.getMessage());
@@ -72,11 +73,12 @@ public class HomePage extends javax.swing.JFrame {
         ButtonPassages = new javax.swing.JButton();
         ButtonFlashcards = new javax.swing.JButton();
         ButtonPassages1 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
-        MenuAbout = new javax.swing.JMenu();
         MenuSignUp = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        MenuAbout = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -102,12 +104,13 @@ public class HomePage extends javax.swing.JFrame {
 
         ButtonPassages1.setText("Vocab List");
 
-        jMenuBar1.setBackground(new java.awt.Color(205, 235, 217));
-        jMenuBar1.setAutoscrolls(true);
+        MenuBar.setBackground(new java.awt.Color(205, 235, 217));
+        MenuBar.setAutoscrolls(true);
+        MenuBar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
 
         jMenu1.setText("漢字");
         jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
-        jMenuBar1.add(jMenu1);
+        MenuBar.add(jMenu1);
 
         MenuLogin.setText("Login");
         MenuLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
@@ -125,11 +128,7 @@ public class HomePage extends javax.swing.JFrame {
                 MenuLoginActionPerformed(evt);
             }
         });
-        jMenuBar1.add(MenuLogin);
-
-        MenuAbout.setText("About");
-        MenuAbout.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        jMenuBar1.add(MenuAbout);
+        MenuBar.add(MenuLogin);
 
         MenuSignUp.setText("Sign Up");
         MenuSignUp.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
@@ -142,9 +141,16 @@ public class HomePage extends javax.swing.JFrame {
                 MenuSignUpMenuSelected(evt);
             }
         });
-        jMenuBar1.add(MenuSignUp);
+        MenuBar.add(MenuSignUp);
 
-        setJMenuBar(jMenuBar1);
+        jMenu2.setText("User");
+        MenuBar.add(jMenu2);
+
+        MenuAbout.setText("About");
+        MenuAbout.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        MenuBar.add(MenuAbout);
+
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -182,7 +188,7 @@ public class HomePage extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         pack();
@@ -190,8 +196,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
         // TODO add your handling code here:
-        Sign_Up l = new Sign_Up(this, true);
-        l.setVisible(true);
+        main.OpenSign_Up(this);
     }//GEN-LAST:event_MenuSignUpMenuSelected
 
     private void MenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuLoginActionPerformed
@@ -201,8 +206,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void MenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuLoginMenuSelected
         // TODO add your handling code here:
-        Login l = new Login(this, true);
-        l.setVisible(true);
+        main.OpenLogin(this);
     }//GEN-LAST:event_MenuLoginMenuSelected
 
     private void ButtonFlashcardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFlashcardsActionPerformed
@@ -253,12 +257,13 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton ButtonPassages1;
     private javax.swing.JLabel LabelWelcome;
     private javax.swing.JMenu MenuAbout;
+    private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MenuLogin;
     private javax.swing.JMenu MenuSignUp;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabelBestLabelOpportunities;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel labelLearnJapanese;
     // End of variables declaration//GEN-END:variables

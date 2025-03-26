@@ -22,14 +22,14 @@ public class Sign_Up extends javax.swing.JDialog {
     /**
      * Creates new form Sign_Up
      */
-    public String username;
-    public String password;
-    public String level;
-    public String language;
-    public String passphrase;
-    public String classCode;
-    public boolean student;
-    public boolean teacher;
+    public String username = "";
+    public String password = "";
+    public String level = "";
+    public String language = "";
+    public String passphrase = "";
+    public String classCode = "";
+    public boolean student = false;
+    public boolean teacher = false;
     App main = App.getInstance();
     
     public Sign_Up(java.awt.Frame parent, boolean modal) {
@@ -386,7 +386,7 @@ public class Sign_Up extends javax.swing.JDialog {
             Student x = createStudent(level, username, password, passphrase, language, classCode);
             main.addStudents(x);
             // adds student to the teacher's class
-            x.teacher.addStudentstoClass(x);
+            (x.teacher).addStudentstoClass(x);
             main.currentUser = x;
         }
         

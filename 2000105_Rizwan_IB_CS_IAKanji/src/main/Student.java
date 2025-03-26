@@ -12,11 +12,16 @@ import java.util.ArrayList;
  */
 public class Student extends User {
     
-    String level;
-    ArrayList<Kanji> Kanji;
-    ArrayList<Word> Vocab;
-    Teacher teacher;
+    String level = "";
+    ArrayList<Kanji> Kanji = new ArrayList<>();
+    ArrayList<Word> Vocab = new ArrayList<>();
+    Teacher teacher = new Teacher();
     App main = App.getInstance();
+    
+    public Student(){
+        // Empty contructor to ensure returned values are not null
+        super();
+    }
     
     public Student(String username, String password, String passphrase, String language, Teacher teacher) {
         super(username, password, passphrase, language);

@@ -11,12 +11,16 @@ import java.util.ArrayList;
  * @author 2000105
  */
 public class Word {
-    String meaning;
-    String reading;
-    ArrayList<Kanji> Kanji;
-    ArrayList<String> Okurigana;
-    boolean exception;
-
+    String meaning = "";
+    String reading = "";
+    ArrayList<Kanji> Kanji = new ArrayList<>();
+    ArrayList<String> Okurigana = new ArrayList<>();
+    boolean exception = false;
+    
+    public Word(){
+        
+    }
+    
     public Word(String meaning, String reading, ArrayList<Kanji> Kanji, ArrayList<String> Okurigana, boolean exception) {
         this.meaning = meaning;
         this.reading = reading;
