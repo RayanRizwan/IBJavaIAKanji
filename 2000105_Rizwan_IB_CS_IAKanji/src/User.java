@@ -12,6 +12,7 @@ public class User {
     private String password;
     private String passphrase;
     String language;
+    String level;
     
     public User(){
         
@@ -21,6 +22,15 @@ public class User {
         this.password = password;
         this.passphrase = passphrase;
         this.language = language;
+
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     

@@ -353,7 +353,7 @@ public class Sign_Up extends javax.swing.JDialog {
         username = TextFieldUsername.getText();
         password = TextFieldPassword.getText();
         passphrase = TextFieldPassphrase.getText();
-        language = (String) ComboBoxLanguage.getSelectedItem();
+        language = ComboBoxLanguage.getSelectedItem().toString();
         classCode = TextFieldClassCode.getText();
         ArrayList<Kanji> Kanji;
         ArrayList<Word> Vocab;

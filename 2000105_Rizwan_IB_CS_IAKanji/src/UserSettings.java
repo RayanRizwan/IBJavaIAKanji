@@ -33,10 +33,6 @@ public class UserSettings extends javax.swing.JDialog {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel6 = new javax.swing.JLabel();
         ComboBoxLanguage = new javax.swing.JComboBox<>();
-        RadioButtonSL = new javax.swing.JRadioButton();
-        RadioButtonHL = new javax.swing.JRadioButton();
-        RadioButtonJoyo = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         ComboBoxLanguageChange = new javax.swing.JComboBox<>();
         ButtonSave = new javax.swing.JButton();
@@ -57,17 +53,6 @@ public class UserSettings extends javax.swing.JDialog {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        buttonGroup1.add(RadioButtonSL);
-        RadioButtonSL.setText("Standard Level");
-
-        buttonGroup1.add(RadioButtonHL);
-        RadioButtonHL.setText("Higher Level");
-
-        buttonGroup1.add(RadioButtonJoyo);
-        RadioButtonJoyo.setText("Joyo Kanji");
-
-        jLabel3.setText("Level");
 
         jLabel7.setText("Preferred Language");
 
@@ -137,41 +122,27 @@ public class UserSettings extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addGap(38, 38, 38)
-                            .addComponent(ComboBoxLanguageChange, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(48, 48, 48)
-                            .addComponent(RadioButtonSL)
-                            .addGap(38, 38, 38)
-                            .addComponent(RadioButtonHL)
-                            .addGap(41, 41, 41)
-                            .addComponent(RadioButtonJoyo))))
-                .addContainerGap(83, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(38, 38, 38)
+                        .addComponent(ComboBoxLanguageChange, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(175, 175, 175)))
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RadioButtonSL)
-                    .addComponent(RadioButtonHL)
-                    .addComponent(RadioButtonJoyo)
-                    .addComponent(jLabel3))
-                .addGap(26, 26, 26)
+                .addGap(68, 68, 68)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboBoxLanguageChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         pack();
@@ -255,11 +226,7 @@ public class UserSettings extends javax.swing.JDialog {
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MenuLogin;
     private javax.swing.JMenu MenuSignUp;
-    private javax.swing.JRadioButton RadioButtonHL;
-    private javax.swing.JRadioButton RadioButtonJoyo;
-    private javax.swing.JRadioButton RadioButtonSL;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;

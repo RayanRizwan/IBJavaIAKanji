@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Student extends User {
     
-    String level = "";
+
     ArrayList<Kanji> Kanji = new ArrayList<>();
     ArrayList<Word> Vocab = new ArrayList<>();
     Teacher teacher = new Teacher();
@@ -23,11 +23,11 @@ public class Student extends User {
         super();
     }
     
-    public Student(String username, String password, String passphrase, String language, Teacher teacher) {
+    public Student(String level, String username, String password, String passphrase, String language, Teacher teacher) {
         super(username, password, passphrase, language);
     }
 
-    public Student(String level, ArrayList<Kanji> Kanji, ArrayList<Word> Vocab, Teacher teacher, String username, String password, String passphrase, String language) {
+    public Student(String level ,ArrayList<Kanji> Kanji, ArrayList<Word> Vocab, Teacher teacher, String username, String password, String passphrase, String language) {
         super(username, password, passphrase, language);
         this.level = level;
         this.Kanji = Kanji;
