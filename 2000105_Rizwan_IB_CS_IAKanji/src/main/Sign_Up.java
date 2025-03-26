@@ -502,37 +502,42 @@ public class Sign_Up extends javax.swing.JDialog {
     }
     
 
-    
-    private void setKanjiList(Student l){
+    private void setKanjiList(Student l) {
         String csvFile = "heisig-kanjis";
         String line;
         String delimiter = ",";
         
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            // Read the file line by line
             while ((line = br.readLine()) != null) {
-                // Split the line by the delimiter
                 String[] data = line.split(delimiter);
 
-                // Process the data (e.g., print it)
-                if(l.level == "Joyo"){
-                    for (int i = 0; i < data.length; i++) {
-                        l.Kanji.get(i).setIndex(Integer.parseInt(data[1]));
-                        l.Kanji.get(i).setKanji(data[0]);
-                        l.Kanji.get(i).setMeaning(data[3]);
-                        l.Kanji.get(i).setKunyomi(data[7]);
-                        l.Kanji.get(i).setOnyomi(data[6]);
-                    }
-                    System.out.println(); 
-                    // Move to the next line
+                // Ensure data has enough columns to avoid ArrayIndexOutOfBoundsException
+                if (data.length < 9) continue;
+
+                // Create a new Kanji object
+                Kanji kanji = new Kanji();
+                kanji.setIndex(Integer.parseInt(data[1])); // Assuming data[1] is always an integer
+                kanji.setKanji(data[0]);
+                kanji.setMeaning(data[3]);
+                kanji.setKunyomi(data[7]);
+                kanji.setOnyomi(data[6]);
+
+                // Determine which list to add based on level
+                if (l.level.equals("Joyo")) {
+                    l.Kanji.add(kanji);
+                } else if (l.level.equals("HL") && (data[8].equals("N5") || data[8].equals("N4") || data[8].equals("N3"))) {
+                    l.Kanji.add(kanji);
+                } else if (l.level.equals("SL") && (data[8].equals("N5") || data[8].equals("N4"))) {
+                    l.Kanji.add(kanji);
                 }
-                
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NumberFormatException e) {
+            System.err.println("Error parsing integer from CSV: " + e.getMessage());
         }
-
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonSignUp;
     private javax.swing.JComboBox<String> ComboBoxLanguage;
