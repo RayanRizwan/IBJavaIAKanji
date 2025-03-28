@@ -1,5 +1,7 @@
 
+import java.util.ArrayList;
 import java.util.MissingResourceException;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 /*
@@ -26,14 +28,17 @@ public class Flashcards extends javax.swing.JFrame {
             // checks that if a locale has been set then the language changes to the necessary language
                 ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
                 ButtonCorrect.setText(messages.getString("Correct"));
-                ButtonIncorrect.setText(messages.getString("Incorrect"));
             }
             catch (MissingResourceException e) {
                 // Fallback to default values (English) if bundle not found
                 
                 System.err.println("Resource bundle missing: " + e.getMessage());
             }
+            
+            TextAreaKanji.setText(nextKanji(main.currentStudent.Kanji));
         }
+        
+        
     }
 
     /**
@@ -46,10 +51,10 @@ public class Flashcards extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
+        TextAreaKanji = new javax.swing.JTextArea();
+        LabelDirections = new javax.swing.JLabel();
         ButtonCorrect = new javax.swing.JButton();
-        ButtonIncorrect = new javax.swing.JButton();
+        TextFieldAnswer = new javax.swing.JTextField();
         MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
@@ -59,16 +64,14 @@ public class Flashcards extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("YuMincho", 0, 24)); // NOI18N
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        TextAreaKanji.setColumns(20);
+        TextAreaKanji.setFont(new java.awt.Font("YuMincho", 0, 24)); // NOI18N
+        TextAreaKanji.setRows(5);
+        jScrollPane1.setViewportView(TextAreaKanji);
 
-        jLabel1.setText("Kanji Flashcards: If you know the Kanji, click \"Correct\", otherwise, click \"incorrect\"");
+        LabelDirections.setText("Kanji Flashcards: If you know the Kanji, click \"Correct\", otherwise, click \"incorrect\"");
 
-        ButtonCorrect.setText("Correct!");
-
-        ButtonIncorrect.setText("Incorrect");
+        ButtonCorrect.setText("Check");
 
         MenuBar.setBackground(new java.awt.Color(205, 235, 217));
         MenuBar.setAutoscrolls(true);
@@ -126,30 +129,30 @@ public class Flashcards extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addComponent(jLabel1))
+                        .addComponent(LabelDirections))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(ButtonIncorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98)
-                .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(156, 156, 156))
+                        .addGap(172, 172, 172)
+                        .addComponent(TextFieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(239, 239, 239)
+                        .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(jLabel1)
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonIncorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addComponent(LabelDirections)
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(TextFieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         pack();
@@ -206,17 +209,21 @@ public class Flashcards extends javax.swing.JFrame {
         });
     }
 
+    private String nextKanji(ArrayList<Kanji> x){
+        Random random = new Random();
+        return x.get(random.nextInt(x.size()) + 1).getKanji();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonCorrect;
-    private javax.swing.JButton ButtonIncorrect;
+    private javax.swing.JLabel LabelDirections;
     private javax.swing.JMenu MenuAbout;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MenuLogin;
     private javax.swing.JMenu MenuSignUp;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextArea TextAreaKanji;
+    private javax.swing.JTextField TextFieldAnswer;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
