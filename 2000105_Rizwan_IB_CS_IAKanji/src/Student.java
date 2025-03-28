@@ -23,6 +23,7 @@ public class Student extends User {
         super();
     }
     
+
     public Student(String level ,ArrayList<Kanji> Kanji, ArrayList<Word> Vocab, Teacher teacher, String username, String password, String passphrase, String language) {
         super(username, password, passphrase, language);
         this.level = level;

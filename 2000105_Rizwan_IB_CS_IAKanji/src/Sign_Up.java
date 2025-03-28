@@ -515,12 +515,12 @@ public class Sign_Up extends javax.swing.JDialog {
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(delimiter);
 
-                // Ensure data has enough columns to avoid ArrayIndexOutOfBoundsException
+                // Makes sure that there is not too much data that errors are given
                 if (data.length < 9) continue;
 
                 // Create a new Kanji object
                 Kanji kanji = new Kanji();
-                kanji.setIndex(Integer.parseInt(data[1])); // Assuming data[1] is always an integer
+                kanji.setIndex(Integer.parseInt(data[1])); // Data[1] should always be an integer given the contents of the CSV
                 kanji.setKanji(data[0]);
                 kanji.setMeaning(data[3]);
                 kanji.setKunyomi(data[7]);
