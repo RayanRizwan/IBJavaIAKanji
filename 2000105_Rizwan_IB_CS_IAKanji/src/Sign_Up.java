@@ -355,8 +355,7 @@ public class Sign_Up extends javax.swing.JDialog {
         passphrase = TextFieldPassphrase.getText();
         language = ComboBoxLanguage.getSelectedItem().toString();
         classCode = TextFieldClassCode.getText();
-        ArrayList<Kanji> Kanji;
-        ArrayList<Word> Vocab;
+
         
         if (RadioButtonStudent.isSelected()){
             // checks if the new user is a teacher or a student
@@ -392,6 +391,7 @@ public class Sign_Up extends javax.swing.JDialog {
             // ensures there is only one user at a time, regardless of 
             // whether they are a student or teacher
             main.currentTeacher = null;
+            setKanjiList(x);
         }
         
         if (language.equals("Japanese")){
