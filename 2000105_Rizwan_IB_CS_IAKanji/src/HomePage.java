@@ -32,7 +32,7 @@ public class HomePage extends javax.swing.JFrame {
 
         
         
-        if (currentStudent != null){
+        if (currentStudent.language != null){
             // sets locale to English or Japanese depending on user preferences
             main.changeLocale(currentStudent.language); // sets the locale to Japan, allowing access 
             // to country code but also Japanese language stuff

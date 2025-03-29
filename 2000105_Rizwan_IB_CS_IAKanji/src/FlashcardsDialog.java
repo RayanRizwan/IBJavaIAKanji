@@ -6,21 +6,22 @@ import java.util.ResourceBundle;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 
 /**
  *
  * @author rayanrizwan
  */
-public class Flashcards extends javax.swing.JFrame {
+public class FlashcardsDialog extends javax.swing.JDialog {
 
     /**
-     * Creates new form Flashcards
+     * Creates new form FlashcardsDialog
      */
     App main = App.getInstance();
-         
-    public Flashcards() {
+    
+    public FlashcardsDialog(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
         
         if (main.currentTeacher != null){
@@ -37,8 +38,6 @@ public class Flashcards extends javax.swing.JFrame {
             
             TextAreaKanji.setText(nextKanji(main.currentStudent.Kanji));
         }
-        
-        
     }
 
     /**
@@ -62,7 +61,7 @@ public class Flashcards extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         MenuAbout = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         TextAreaKanji.setColumns(20);
         TextAreaKanji.setFont(new java.awt.Font("YuMincho", 0, 24)); // NOI18N
@@ -139,12 +138,12 @@ public class Flashcards extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(153, 153, 153)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addContainerGap(42, Short.MAX_VALUE)
                 .addComponent(LabelDirections)
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,7 +151,7 @@ public class Flashcards extends javax.swing.JFrame {
                 .addComponent(TextFieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -160,8 +159,7 @@ public class Flashcards extends javax.swing.JFrame {
 
     private void MenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuLoginMenuSelected
         // TODO add your handling code here:
-        Login l = new Login(this, true);
-        l.setVisible(true);
+       
     }//GEN-LAST:event_MenuLoginMenuSelected
 
     private void MenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuLoginActionPerformed
@@ -170,8 +168,7 @@ public class Flashcards extends javax.swing.JFrame {
 
     private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
         // TODO add your handling code here:
-        Sign_Up l = new Sign_Up(this, true);
-        l.setVisible(true);
+        
     }//GEN-LAST:event_MenuSignUpMenuSelected
 
     /**
@@ -191,20 +188,27 @@ public class Flashcards extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Flashcards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FlashcardsDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Flashcards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FlashcardsDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Flashcards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FlashcardsDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Flashcards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FlashcardsDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Flashcards().setVisible(true);
+                FlashcardsDialog dialog = new FlashcardsDialog(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
