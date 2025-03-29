@@ -220,8 +220,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void ButtonFlashcardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFlashcardsActionPerformed
         // TODO add your handling code here:
-        
-        
+        main.openFlaschards(this);
     }//GEN-LAST:event_ButtonFlashcardsActionPerformed
 
     private void jMenu2MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu2MenuSelected

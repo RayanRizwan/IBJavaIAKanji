@@ -147,7 +147,11 @@ public class App {
             locale = Locale.ENGLISH;
         }
     }
-
+    
+    public void openFlaschards(Frame L){
+        Flashcards f = new Flashcards(L, true);
+        f.setVisible(true);
+    }
             
 }
 

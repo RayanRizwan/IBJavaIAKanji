@@ -1,8 +1,11 @@
 
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -507,11 +510,19 @@ public class Sign_Up extends javax.swing.JDialog {
     
 
     private void setKanjiList(Student l) {
-        String csvFile = "heisig-kanjis";
-        String line;
+        // find the CSV file with all the Kanji
+        String csvFile = "heisig-kanjis.csv";
         String delimiter = ",";
-        
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        // InputStream here simply opens the stream
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream(csvFile)) {
+            // need to ensure that is isn't null and the csvFile is read
+            if (is == null) {
+                throw new FileNotFoundException("heisig-kanjis not found in classpath");
+            }
+            // Bufferring simply allows for incredible efficiency, 
+            // reading thousands of lines at once
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(is))){
+                String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(delimiter);
 
@@ -535,6 +546,8 @@ public class Sign_Up extends javax.swing.JDialog {
                     l.Kanji.add(kanji);
                 }
             }
+            }
+            
         } catch (IOException e) {
             e.printStackTrace();
         } catch (NumberFormatException e) {
