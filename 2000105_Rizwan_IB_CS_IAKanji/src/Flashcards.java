@@ -212,6 +212,7 @@ public class Flashcards extends javax.swing.JDialog {
     }
 
     private String nextKanji(ArrayList<Kanji> x){
+        // ensure that Kanji actually exist in the arrayList
         if (x == null || x.isEmpty()) {
             return null;  
         }
