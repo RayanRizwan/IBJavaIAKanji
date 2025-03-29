@@ -531,7 +531,7 @@ public class Sign_Up extends javax.swing.JDialog {
 
                 // Create a new Kanji object
                 Kanji kanji = new Kanji();
-                kanji.setIndex(Integer.parseInt(data[1])); // Data[1] should always be an integer given the contents of the CSV
+                kanji.setIndex(Integer.parseInt(data[2])); // Data[1] should always be an integer given the contents of the CSV
                 kanji.setKanji(data[0]);
                 kanji.setMeaning(data[3]);
                 kanji.setKunyomi(data[7]);
