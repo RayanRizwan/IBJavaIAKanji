@@ -2,6 +2,12 @@
 
 
 import java.awt.Frame;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -14,7 +20,7 @@ import java.util.Locale;
  *
  * @author 2000105
  */
-public class App {
+public class App implements Serializable{
     
     private static App instance = new App();
 
@@ -152,6 +158,48 @@ public class App {
         Flashcards f = new Flashcards(L, true);
         f.setVisible(true);
     }
-            
+    
+    // The following four methods are called in App rather than serialiser as
+    // App is the only class that will ever need to call these methods
+    
+    public void SerialiseStudents(ArrayList<Student> Students, String filename){
+        try (ObjectOutputStream oos = new ObjectOutputStream(
+                new FileOutputStream(filename))) {
+            oos.writeObject(Students);
+            System.out.println("Serialization successful");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public ArrayList<Student> deserialiseStudents(String filename){
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+            return (ArrayList<Student>) ois.readObject();
+        } 
+        catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return new ArrayList<>();  // Return empty list on error
+        }
+    }
+    
+    public void SerialiseTeachers(ArrayList<Teacher> Teachers, String filename){
+        try (ObjectOutputStream oos = new ObjectOutputStream(
+                new FileOutputStream(filename))) {
+            oos.writeObject(Teachers);
+            System.out.println("Serialization successful");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public ArrayList<Teacher> deserialiseTeachers(String filename){
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+            return (ArrayList<Teacher>) ois.readObject();
+        } 
+        catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return new ArrayList<>();  // Return empty list on error
+        }
+    }
 }
 

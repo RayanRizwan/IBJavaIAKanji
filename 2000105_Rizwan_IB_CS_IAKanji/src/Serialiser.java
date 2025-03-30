@@ -16,8 +16,11 @@ import java.util.ArrayList;
  * @author rayanrizwan
  */
 public class Serialiser {
+    
+    private static Serialiser instance = new Serialiser();
+    
     // Kanji serialisation code
-    public static void serializeKanjiList(ArrayList<Kanji> kanjiList, String filename) {
+    public static void serialiseKanjiList(ArrayList<Kanji> kanjiList, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(
                 new FileOutputStream(filename))) {
             oos.writeObject(kanjiList);
@@ -27,8 +30,12 @@ public class Serialiser {
         }
     }
     
+    public static Serialiser getInstance() {
+
+        return instance;
+    }
     
-    public static ArrayList<Kanji> deserializeKanjiList(String filename) {
+    public static ArrayList<Kanji> deserialiseKanjiList(String filename) {
     try (ObjectInputStream ois = new ObjectInputStream(
             new FileInputStream(filename))) {
         return (ArrayList<Kanji>) ois.readObject();

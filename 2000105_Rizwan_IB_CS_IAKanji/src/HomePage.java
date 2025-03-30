@@ -64,7 +64,7 @@ public class HomePage extends javax.swing.JFrame {
         LabelWelcome = new javax.swing.JLabel();
         jLabelBestLabelOpportunities = new javax.swing.JLabel();
         labelLearnJapanese = new javax.swing.JLabel();
-        ButtonPassages = new javax.swing.JButton();
+        ButtonSave = new javax.swing.JButton();
         ButtonFlashcards = new javax.swing.JButton();
         ButtonPassages1 = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
@@ -87,7 +87,12 @@ public class HomePage extends javax.swing.JFrame {
         labelLearnJapanese.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         labelLearnJapanese.setText("Learn Japanese as if it's your native tongue");
 
-        ButtonPassages.setText("Passages");
+        ButtonSave.setText("Save");
+        ButtonSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonSaveActionPerformed(evt);
+            }
+        });
 
         ButtonFlashcards.setText("Flashcards");
         ButtonFlashcards.addActionListener(new java.awt.event.ActionListener() {
@@ -171,9 +176,9 @@ public class HomePage extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(303, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -186,11 +191,10 @@ public class HomePage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelLearnJapanese, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ButtonPassages, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
@@ -221,6 +225,11 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
         main.openUserSettings(this);
     }//GEN-LAST:event_jMenu2MenuSelected
+
+    private void ButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ButtonSaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,8 +269,8 @@ public class HomePage extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonFlashcards;
-    private javax.swing.JButton ButtonPassages;
     private javax.swing.JButton ButtonPassages1;
+    private javax.swing.JButton ButtonSave;
     private javax.swing.JLabel LabelWelcome;
     private javax.swing.JMenu MenuAbout;
     private javax.swing.JMenuBar MenuBar;
