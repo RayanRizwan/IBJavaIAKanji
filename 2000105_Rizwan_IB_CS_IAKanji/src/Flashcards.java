@@ -18,17 +18,19 @@ public class Flashcards extends javax.swing.JDialog {
     /**
      * Creates new form Flashcards
      */
+    private static final Random Random = new Random(); // allows for the reusal 
+    // of random if necessary
     App main = App.getInstance();
     
     public Flashcards(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         
-        if (main.currentTeacher != null){
+        if (main.currentStudent != null){
             try{
             // checks that if a locale has been set then the language changes to the necessary language
                 ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
-                ButtonCorrect.setText(messages.getString("Correct"));
+                ButtonCorrect.setText(messages.getString("Check"));
             }
             catch (MissingResourceException e) {
                 // Fallback to default values (English) if bundle not found
@@ -216,8 +218,7 @@ public class Flashcards extends javax.swing.JDialog {
         if (x == null || x.isEmpty()) {
             return null;  
         }
-        Random random = new Random();
-        return x.get(random.nextInt(x.size())).getKanji();
+        return x.get(Random.nextInt(x.size())).getKanji();
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

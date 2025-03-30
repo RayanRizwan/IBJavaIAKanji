@@ -28,7 +28,7 @@ public class App {
 
     Student currentStudent = new Student();
     Teacher currentTeacher = new Teacher();
- 
+    
     public Locale locale = Locale.ENGLISH;
     
     public static void main(){

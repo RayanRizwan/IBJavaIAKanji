@@ -1,8 +1,5 @@
 
 
-
-
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -38,6 +35,7 @@ public class HomePage extends javax.swing.JFrame {
             // to country code but also Japanese language stuff
         }
 
+
         try{
             // checks that if a locale has been set then the language changes to the necessary language
            ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
@@ -50,10 +48,6 @@ public class HomePage extends javax.swing.JFrame {
             labelLearnJapanese.setText("Learn Japanese like a Native Speaker");
             System.err.println("Resource bundle missing: " + e.getMessage());
         }
-        
-
-        
-        
     }
 
     /**
