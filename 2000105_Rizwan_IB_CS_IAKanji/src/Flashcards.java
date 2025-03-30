@@ -21,7 +21,7 @@ public class Flashcards extends javax.swing.JDialog {
     private static final Random Random = new Random(); // allows for the reusal 
     // of random if necessary
     App main = App.getInstance();
-    
+    String x = "";
     public Flashcards(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -37,8 +37,8 @@ public class Flashcards extends javax.swing.JDialog {
                 
                 System.err.println("Resource bundle missing: " + e.getMessage());
             }
-            
-            LabelKanji.setText(nextKanji(main.currentStudent.Kanji));
+            x = nextKanji(main.currentStudent.Kanji);
+            LabelKanji.setText(x);
         }
     }
 
@@ -55,6 +55,8 @@ public class Flashcards extends javax.swing.JDialog {
         ButtonCorrect = new javax.swing.JButton();
         TextFieldAnswer = new javax.swing.JTextField();
         LabelKanji = new javax.swing.JLabel();
+        ButtonExit = new javax.swing.JButton();
+        LabelCorrect = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
@@ -67,10 +69,24 @@ public class Flashcards extends javax.swing.JDialog {
         LabelDirections.setText("Kanji Flashcards: If you know the meaning of the Kanji, click \"Check\"");
 
         ButtonCorrect.setText("Check");
+        ButtonCorrect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCorrectActionPerformed(evt);
+            }
+        });
 
         TextFieldAnswer.setText("Type here");
 
         LabelKanji.setText("Kanji");
+
+        ButtonExit.setText("Exit");
+        ButtonExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonExitActionPerformed(evt);
+            }
+        });
+
+        LabelCorrect.setText("Correct/Incorrect");
 
         MenuBar.setBackground(new java.awt.Color(205, 235, 217));
         MenuBar.setAutoscrolls(true);
@@ -127,30 +143,40 @@ public class Flashcards extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
-                        .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(LabelDirections))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(172, 172, 172)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LabelKanji)
-                            .addComponent(TextFieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(TextFieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(127, 127, 127)
+                            .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(71, 71, 71)
+                            .addComponent(LabelDirections)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(255, 255, 255)
+                        .addComponent(LabelCorrect)))
                 .addContainerGap(144, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addComponent(LabelDirections)
-                .addGap(89, 89, 89)
+                .addGap(56, 56, 56)
                 .addComponent(LabelKanji)
-                .addGap(37, 37, 37)
+                .addGap(27, 27, 27)
                 .addComponent(TextFieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56))
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(LabelCorrect)
+                .addGap(41, 41, 41))
         );
 
         pack();
@@ -169,6 +195,24 @@ public class Flashcards extends javax.swing.JDialog {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_MenuSignUpMenuSelected
+
+    private void ButtonCorrectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCorrectActionPerformed
+        // TODO add your handling code here:
+        ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
+        if (TextFieldAnswer.getText().toLowerCase().equals(x)){
+            LabelCorrect.setText(messages.getString("Correct"));
+        }
+        else if (!TextFieldAnswer.getText().toLowerCase().equals(x)){
+            LabelCorrect.setText(messages.getString("Incorrect"));
+        }
+    }//GEN-LAST:event_ButtonCorrectActionPerformed
+
+    private void ButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonExitActionPerformed
+        // TODO add your handling code here:
+        // No need to serialise data or anything as users should be going
+        // through the same kanji
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,6 +267,8 @@ public class Flashcards extends javax.swing.JDialog {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonCorrect;
+    private javax.swing.JButton ButtonExit;
+    private javax.swing.JLabel LabelCorrect;
     private javax.swing.JLabel LabelDirections;
     private javax.swing.JLabel LabelKanji;
     private javax.swing.JMenu MenuAbout;

@@ -169,6 +169,7 @@ public class Login extends javax.swing.JDialog {
                 LabelError.setText("A user with these login details cannot be found. Please try again. ");
             }
             else{
+                
                 main.currentStudent = main.Students.get(i);
                 ExitLogin(this);
             }

@@ -34,6 +34,7 @@ public class Sign_Up extends javax.swing.JDialog {
     public boolean student = false;
     public boolean teacher = false;
     App main = App.getInstance();
+    Serialiser serialiser = Serialiser.getInstance();
     
     public Sign_Up(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -458,12 +459,14 @@ public class Sign_Up extends javax.swing.JDialog {
        ArrayList<Word> VocabList = new ArrayList<>();
         
        Teacher x = main.findClass(ClassCode);
-       
-        
-        return new Student(level, Kanji, VocabList, x, username, password, passphrase, language);
+       return new Student(level, Kanji, VocabList, x, username, password, passphrase, language);
    }
    
    private void ExitSignUp(Sign_Up l){
+       if (main.currentStudent != null){
+           // Created file is tited off of the users username
+           Serialiser.serialiseKanjiList(main.currentStudent.Kanji, (main.currentStudent.username + "_kanji_list.ser"));
+       }
        l.setVisible(false);
    }
     /**
@@ -527,7 +530,7 @@ public class Sign_Up extends javax.swing.JDialog {
                 String[] data = line.split(delimiter);
 
                 // Makes sure that there is not too much data that errors are given
-                if (data.length < 9) continue;
+                if (data.length < 10) continue;
 
                 // Create a new Kanji object
                 Kanji kanji = new Kanji();
@@ -538,11 +541,15 @@ public class Sign_Up extends javax.swing.JDialog {
                 kanji.setOnyomi(data[6]);
 
                 // Determine which list to add based on level
+                // data[9] is basically a level set by the Japanese government
+                // The reason it is not a variable is because this is its only instance
                 if (l.level.equals("Joyo")) {
                     l.Kanji.add(kanji);
-                } else if (l.level.equals("HL") && (data[8].equals("N5") || data[8].equals("N4") || data[8].equals("N3"))) {
+                } else if (l.level.equals("HL") && (data[9].equals("N5") ||
+                        data[9].equals("N4") || data[9].equals("N3"))) {
                     l.Kanji.add(kanji);
-                } else if (l.level.equals("SL") && (data[8].equals("N5") || data[8].equals("N4"))) {
+                } else if (l.level.equals("SL") && (data[9].equals("N5") ||
+                        data[9].equals("N4"))) {
                     l.Kanji.add(kanji);
                 }
             }
@@ -553,7 +560,10 @@ public class Sign_Up extends javax.swing.JDialog {
         } catch (NumberFormatException e) {
             System.err.println("Error parsing integer from CSV: " + e.getMessage());
         }
+        
+        
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonSignUp;

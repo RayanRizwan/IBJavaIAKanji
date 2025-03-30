@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
@@ -10,7 +11,8 @@ import java.util.ArrayList;
  *
  * @author 2000105
  */
-public class Kanji {
+// need to ensure that I can save each users Kanji list
+public class Kanji implements Serializable {
     // in the dictionary I use, each Kanji will have an index. The index 
     // is actually dependent on the level of the student
     private int index = 0;
@@ -21,21 +23,20 @@ public class Kanji {
     String Kunyomi = "";
     String Onyomi = "";
     String level = "";
-    boolean known = false;
+
     
     public Kanji(){
         // Empty constructor to allow for initialised values in other things
     }
     
     public Kanji(int index, String kanji, String meaning, String Kunyomi, 
-            String Onyomi, String Level, boolean known){
+            String Onyomi, String Level){
         kanji = this.kanji;
         index = this.index;
         meaning = this.meaning;
         Kunyomi = this.Kunyomi;
         Onyomi = this.Onyomi;
         Level = this.level;
-        known = this.known;
     }
 
     public String getKanji() {
