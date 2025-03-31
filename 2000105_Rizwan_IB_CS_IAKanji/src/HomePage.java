@@ -13,6 +13,7 @@
     /**
      * Creates new form Kanji_IA_UI
      */
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.MissingResourceException;
@@ -27,7 +28,8 @@ public class HomePage extends javax.swing.JFrame {
     public HomePage() {
         initComponents();
 
-        
+        File students = new File("All_Students.ser");
+        File teachers = new File("All_Teachers.ser");
         
         if (currentStudent.language != null){
             // sets locale to English or Japanese depending on user preferences
@@ -48,6 +50,24 @@ public class HomePage extends javax.swing.JFrame {
             labelLearnJapanese.setText("Learn Japanese like a Native Speaker");
             System.err.println("Resource bundle missing: " + e.getMessage());
         }
+        
+        // Checks if file students exists, and if it does all prior students created
+        // should be added to the new "instance"
+        // same thing happens with teachers
+        
+        if(students.exists()){
+            main.Students = main.deserialiseStudents("All_Students.ser");
+        }
+        
+        if(teachers.exists()){
+            main.Teacher = main.deserialiseTeachers("All_Teachers.ser");
+        }
+        
+        // The above methods ensure that nothing needs to be done when logging in
+        // Hence all Kanji data is also stored, as the kanji data is inherently
+        // Part of being a student
+        
+        
     }
 
     /**
@@ -102,6 +122,11 @@ public class HomePage extends javax.swing.JFrame {
         });
 
         ButtonPassages1.setText("Vocab List");
+        ButtonPassages1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonPassages1ActionPerformed(evt);
+            }
+        });
 
         MenuBar.setBackground(new java.awt.Color(205, 235, 217));
         MenuBar.setAutoscrolls(true);
@@ -228,8 +253,13 @@ public class HomePage extends javax.swing.JFrame {
 
     private void ButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveActionPerformed
         // TODO add your handling code here:
-        
+        main.SerialiseStudents(main.Students, "All_Students.ser");
+        main.SerialiseTeachers(main.Teacher, "All_Teachers.ser");
     }//GEN-LAST:event_ButtonSaveActionPerformed
+
+    private void ButtonPassages1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPassages1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonPassages1ActionPerformed
 
     /**
      * @param args the command line arguments

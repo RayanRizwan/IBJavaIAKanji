@@ -21,7 +21,8 @@ public class Flashcards extends javax.swing.JDialog {
     private static final Random Random = new Random(); // allows for the reusal 
     // of random if necessary
     App main = App.getInstance();
-    String x = "";
+    Kanji x = new Kanji();
+    // Kanji x is the displayed kanji
     public Flashcards(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -30,6 +31,7 @@ public class Flashcards extends javax.swing.JDialog {
             try{
             // checks that if a locale has been set then the language changes to the necessary language
                 ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
+                LabelDirections.setText(messages.getString("DirectionsKanji"));
                 ButtonCorrect.setText(messages.getString("Check"));
             }
             catch (MissingResourceException e) {
@@ -38,7 +40,7 @@ public class Flashcards extends javax.swing.JDialog {
                 System.err.println("Resource bundle missing: " + e.getMessage());
             }
             x = nextKanji(main.currentStudent.Kanji);
-            LabelKanji.setText(x);
+            LabelKanji.setText(x.kanji);
         }
     }
 
@@ -147,19 +149,18 @@ public class Flashcards extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LabelKanji)
                             .addComponent(TextFieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(127, 127, 127)
-                            .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(71, 71, 71)
-                            .addComponent(LabelDirections)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(ButtonCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(131, 131, 131)
+                        .addComponent(ButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(255, 255, 255)
-                        .addComponent(LabelCorrect)))
-                .addContainerGap(144, Short.MAX_VALUE))
+                        .addComponent(LabelCorrect))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(LabelDirections)))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,11 +200,14 @@ public class Flashcards extends javax.swing.JDialog {
     private void ButtonCorrectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCorrectActionPerformed
         // TODO add your handling code here:
         ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
-        if (TextFieldAnswer.getText().toLowerCase().equals(x)){
+        if (TextFieldAnswer.getText().toLowerCase().equals(x.meaning)){
             LabelCorrect.setText(messages.getString("Correct"));
+            // Sets  to be the next kanji
+            x = nextKanji(main.currentStudent.Kanji);
+            LabelKanji.setText(x.kanji);
         }
-        else if (!TextFieldAnswer.getText().toLowerCase().equals(x)){
-            LabelCorrect.setText(messages.getString("Incorrect"));
+        else if (!TextFieldAnswer.getText().toLowerCase().equals(x.meaning)){
+            LabelCorrect.setText(messages.getString("Incorrect") + x.meaning);
         }
     }//GEN-LAST:event_ButtonCorrectActionPerformed
 
@@ -257,12 +261,12 @@ public class Flashcards extends javax.swing.JDialog {
         });
     }
 
-    private String nextKanji(ArrayList<Kanji> x){
+    private Kanji nextKanji(ArrayList<Kanji> x){
         // ensure that Kanji actually exist in the arrayList
         if (x == null || x.isEmpty()) {
             return null;  
         }
-        return x.get(Random.nextInt(x.size())).getKanji();
+        return x.get(Random.nextInt(x.size()));
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

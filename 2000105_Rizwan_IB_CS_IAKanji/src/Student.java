@@ -14,7 +14,7 @@ public class Student extends User {
     
 
     ArrayList<Kanji> Kanji = new ArrayList<>();
-    ArrayList<Word> Vocab = new ArrayList<>();
+    ArrayList<String> Vocab = new ArrayList<>();
     Teacher teacher = new Teacher();
     App main = App.getInstance();
     
@@ -24,7 +24,7 @@ public class Student extends User {
     }
     
 
-    public Student(String level ,ArrayList<Kanji> Kanji, ArrayList<Word> Vocab, Teacher teacher, String username, String password, String passphrase, String language) {
+    public Student(String level ,ArrayList<Kanji> Kanji, ArrayList<String> Vocab, Teacher teacher, String username, String password, String passphrase, String language) {
         super(username, password, passphrase, language);
         this.level = level;
         this.Kanji = Kanji;
@@ -48,11 +48,11 @@ public class Student extends User {
         this.Kanji = Kanji;
     }
 
-    public ArrayList<Word> getVocab() {
+    public ArrayList<String> getVocab() {
         return Vocab;
     }
 
-    public void setVocab(ArrayList<Word> Vocab) {
+    public void setVocab(ArrayList<String> Vocab) {
         this.Vocab = Vocab;
     }
 

@@ -36,12 +36,12 @@ public class Serialiser {
     }
     
     public static ArrayList<Kanji> deserialiseKanjiList(String filename) {
-    try (ObjectInputStream ois = new ObjectInputStream(
-            new FileInputStream(filename))) {
-        return (ArrayList<Kanji>) ois.readObject();
-    } catch (IOException | ClassNotFoundException e) {
-        e.printStackTrace();
-        return new ArrayList<>();  // Return empty list on error
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+            return (ArrayList<Kanji>) ois.readObject();
+        } 
+        catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return new ArrayList<>();  // Return empty list on error
+        }
     }
-}
 }

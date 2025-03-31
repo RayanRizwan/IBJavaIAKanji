@@ -456,7 +456,7 @@ public class Sign_Up extends javax.swing.JDialog {
    private Student createStudent(String level, String username, String password, String passphrase, String language, String ClassCode){
        // Same concept as with Teacher, filler classes that the Student can add words to later
        ArrayList<Kanji> Kanji = new ArrayList<>();
-       ArrayList<Word> VocabList = new ArrayList<>();
+       ArrayList<String> VocabList = new ArrayList<>();
         
        Teacher x = main.findClass(ClassCode);
        return new Student(level, Kanji, VocabList, x, username, password, passphrase, language);

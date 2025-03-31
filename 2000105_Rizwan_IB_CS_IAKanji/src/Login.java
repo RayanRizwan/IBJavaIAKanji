@@ -1,4 +1,7 @@
 
+import java.io.File;
+
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -15,6 +18,7 @@ public class Login extends javax.swing.JDialog {
      * Creates new form Login
      */
     App main = App.getInstance();
+    Serialiser serialiser = Serialiser.getInstance();
     public Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -169,14 +173,15 @@ public class Login extends javax.swing.JDialog {
                 LabelError.setText("A user with these login details cannot be found. Please try again. ");
             }
             else{
-                
                 main.currentStudent = main.Students.get(i);
+                File KanjiList = new File(main.currentStudent.username + "_kanji_list.ser");
+                // ensures that file exists before assigning the kanji list to the relevant user
+                if (KanjiList.exists()){
+                    main.currentStudent.Kanji = 
+                            serialiser.deserialiseKanjiList(main.currentStudent.username + "_kanji_list.ser");
+                }
                 ExitLogin(this);
-            }
-            
-            
-            
-            
+            }  
         }
     }//GEN-LAST:event_ButtonLoginActionPerformed
 
