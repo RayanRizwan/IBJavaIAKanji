@@ -96,11 +96,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-              <Component id="LabelDirections" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="100" max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -115,12 +110,23 @@
                   <Component id="TextFieldMeaning" min="-2" pref="262" max="-2" attributes="0"/>
                   <Component id="TextFieldReading" min="-2" pref="262" max="-2" attributes="0"/>
                   <Component id="TextFieldWord" min="-2" pref="262" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="ButtonEnter" min="-2" pref="109" max="-2" attributes="0"/>
-                  </Group>
               </Group>
               <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                      <Component id="LabelDirections" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+                      <Component id="ButtonEnter" min="-2" pref="109" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                      <Component id="ButtonExit" min="-2" pref="109" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="100" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -144,9 +150,12 @@
                   <Component id="TextFieldMeaning" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelMeaning" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="53" max="32767" attributes="0"/>
-              <Component id="ButtonEnter" min="-2" pref="40" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ButtonEnter" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="ButtonExit" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="68" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -194,6 +203,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Enter word"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="ButtonExit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Exit"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonExitActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

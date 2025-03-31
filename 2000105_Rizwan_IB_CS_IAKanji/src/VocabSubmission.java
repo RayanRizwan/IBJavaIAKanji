@@ -30,6 +30,7 @@ public class VocabSubmission extends javax.swing.JDialog {
                 labelWord.setText(messages.getString("Word"));
                 labelReading.setText(messages.getString("Reading"));
                 labelMeaning.setText(messages.getString("Meaning"));
+                ButtonExit.setText(messages.getString("Exit"));
             }
             catch (MissingResourceException e) {
                 // Fallback to default values (English) if bundle not found
@@ -60,6 +61,7 @@ public class VocabSubmission extends javax.swing.JDialog {
         TextFieldReading = new javax.swing.JTextField();
         labelMeaning = new javax.swing.JLabel();
         TextFieldMeaning = new javax.swing.JTextField();
+        ButtonExit = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
@@ -98,6 +100,13 @@ public class VocabSubmission extends javax.swing.JDialog {
         labelMeaning.setText("Meaning");
 
         TextFieldMeaning.setText("Enter word");
+
+        ButtonExit.setText("Exit");
+        ButtonExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonExitActionPerformed(evt);
+            }
+        });
 
         MenuBar.setBackground(new java.awt.Color(205, 235, 217));
         MenuBar.setAutoscrolls(true);
@@ -151,10 +160,6 @@ public class VocabSubmission extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(LabelDirections)
-                .addContainerGap(100, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -166,11 +171,19 @@ public class VocabSubmission extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TextFieldMeaning, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TextFieldReading, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextFieldWord, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(ButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(TextFieldWord, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(109, 109, 109))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(LabelDirections))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(ButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(ButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,9 +202,11 @@ public class VocabSubmission extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextFieldMeaning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelMeaning))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(ButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         pack();
@@ -220,13 +235,19 @@ public class VocabSubmission extends javax.swing.JDialog {
         // TODO add your handling code here:
         String word = TextFieldWord.getText();
         String reading = TextFieldReading.getText();
-        String meaning = TextFieldMeaning.getText();
+        // The other two are in Japanese and hence are not "to lowercase"
+        String meaning = TextFieldMeaning.getText().toLowerCase();
         // Create word with the above parameters
         
         Word w = new Word(word, meaning, reading);  
         
         main.currentStudent.Vocab.add(w);
     }//GEN-LAST:event_ButtonEnterActionPerformed
+
+    private void ButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonExitActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,6 +294,7 @@ public class VocabSubmission extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonCorrect;
     private javax.swing.JButton ButtonEnter;
+    private javax.swing.JButton ButtonExit;
     private javax.swing.JLabel LabelDirections;
     private javax.swing.JMenu MenuAbout;
     private javax.swing.JMenuBar MenuBar;

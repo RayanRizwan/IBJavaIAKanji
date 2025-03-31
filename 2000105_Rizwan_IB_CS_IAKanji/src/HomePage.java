@@ -264,8 +264,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void ButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveActionPerformed
         // TODO add your handling code here:
-        main.SerialiseStudents(main.Students, "All_Students.ser");
-        main.SerialiseTeachers(main.Teacher, "All_Teachers.ser");
+        
     }//GEN-LAST:event_ButtonSaveActionPerformed
 
     private void ButtonVocabSubmissionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVocabSubmissionsActionPerformed
@@ -275,6 +274,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void ButtonVocabListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVocabListActionPerformed
         // TODO add your handling code here:
+        main.openVocabList(this);
     }//GEN-LAST:event_ButtonVocabListActionPerformed
 
     /**
