@@ -79,9 +79,7 @@ public class Sign_Up extends javax.swing.JDialog {
         jRadioButtonTeacher = new javax.swing.JRadioButton();
         RadioButtonStudent = new javax.swing.JRadioButton();
         ComboBoxLanguage = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        TextFieldClassCode = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         TextFieldPassphrase = new javax.swing.JPasswordField();
         jMenuBar3 = new javax.swing.JMenuBar();
@@ -201,11 +199,7 @@ public class Sign_Up extends javax.swing.JDialog {
             }
         });
 
-        jLabel5.setText("Class Code (if you have no teacher, type in 000AAA)");
-
         jLabel6.setText("Preferred Language");
-
-        TextFieldClassCode.setText("000AAA");
 
         jLabel7.setText("Passphrase (if you forget password)");
 
@@ -259,10 +253,6 @@ public class Sign_Up extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(161, 161, 161))
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,13 +264,9 @@ public class Sign_Up extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5))
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ComboBoxLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TextFieldClassCode, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel6)
+                                .addGap(229, 229, 229)
+                                .addComponent(ComboBoxLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
@@ -305,7 +291,11 @@ public class Sign_Up extends javax.swing.JDialog {
                                     .addComponent(jRadioButtonTeacher))
                                 .addGap(41, 41, 41)
                                 .addComponent(RadioButtonJoyo)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(231, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ButtonSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(166, 166, 166))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,17 +324,13 @@ public class Sign_Up extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboBoxLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(TextFieldClassCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(TextFieldPassphrase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
                 .addComponent(ButtonSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -358,7 +344,7 @@ public class Sign_Up extends javax.swing.JDialog {
         password = TextFieldPassword.getText();
         passphrase = TextFieldPassphrase.getText();
         language = ComboBoxLanguage.getSelectedItem().toString();
-        classCode = TextFieldClassCode.getText();
+        classCode = "000AAA";
 
         
         if (RadioButtonStudent.isSelected()){
@@ -574,7 +560,6 @@ public class Sign_Up extends javax.swing.JDialog {
     private javax.swing.JRadioButton RadioButtonJoyo;
     private javax.swing.JRadioButton RadioButtonSL;
     private javax.swing.JRadioButton RadioButtonStudent;
-    private javax.swing.JTextField TextFieldClassCode;
     private javax.swing.JPasswordField TextFieldPassphrase;
     private javax.swing.JPasswordField TextFieldPassword;
     private javax.swing.JTextField TextFieldUsername;
@@ -584,7 +569,6 @@ public class Sign_Up extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
