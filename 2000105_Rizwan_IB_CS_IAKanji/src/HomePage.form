@@ -109,13 +109,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="ButtonFlashcards" min="-2" pref="102" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="ButtonVocabSubmissions" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ButtonPassages1" min="-2" pref="102" max="-2" attributes="0"/>
+                      <Component id="ButtonVocabList" min="-2" pref="102" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="ButtonSave" min="-2" pref="102" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="303" max="32767" attributes="0"/>
+              <EmptySpace pref="162" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -131,8 +133,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ButtonFlashcards" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="ButtonPassages1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="ButtonSave" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="ButtonVocabList" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="ButtonVocabSubmissions" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="58" max="32767" attributes="0"/>
           </Group>
@@ -177,12 +180,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonFlashcardsActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="ButtonPassages1">
+    <Component class="javax.swing.JButton" name="ButtonVocabSubmissions">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Submit Vocab"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonVocabSubmissionsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ButtonVocabList">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vocab List"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonPassages1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonVocabListActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

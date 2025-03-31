@@ -159,6 +159,11 @@ public class App implements Serializable{
         f.setVisible(true);
     }
     
+    public void openVocabSubmissions(Frame L){
+        VocabSubmission v = new VocabSubmission(L, true);
+        v.setVisible(true);
+    }
+    
     // The following four methods are called in App rather than serialiser as
     // App is the only class that will ever need to call these methods
     

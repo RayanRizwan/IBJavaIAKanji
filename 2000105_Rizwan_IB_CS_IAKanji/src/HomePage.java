@@ -86,7 +86,8 @@ public class HomePage extends javax.swing.JFrame {
         labelLearnJapanese = new javax.swing.JLabel();
         ButtonSave = new javax.swing.JButton();
         ButtonFlashcards = new javax.swing.JButton();
-        ButtonPassages1 = new javax.swing.JButton();
+        ButtonVocabSubmissions = new javax.swing.JButton();
+        ButtonVocabList = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MenuLogin = new javax.swing.JMenu();
@@ -121,10 +122,17 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        ButtonPassages1.setText("Vocab List");
-        ButtonPassages1.addActionListener(new java.awt.event.ActionListener() {
+        ButtonVocabSubmissions.setText("Submit Vocab");
+        ButtonVocabSubmissions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonPassages1ActionPerformed(evt);
+                ButtonVocabSubmissionsActionPerformed(evt);
+            }
+        });
+
+        ButtonVocabList.setText("Vocab List");
+        ButtonVocabList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonVocabListActionPerformed(evt);
             }
         });
 
@@ -200,11 +208,13 @@ public class HomePage extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(ButtonVocabSubmissions)
                         .addGap(18, 18, 18)
-                        .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ButtonVocabList, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(303, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,8 +228,9 @@ public class HomePage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonPassages1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonVocabList, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonVocabSubmissions, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
@@ -257,9 +268,14 @@ public class HomePage extends javax.swing.JFrame {
         main.SerialiseTeachers(main.Teacher, "All_Teachers.ser");
     }//GEN-LAST:event_ButtonSaveActionPerformed
 
-    private void ButtonPassages1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPassages1ActionPerformed
+    private void ButtonVocabSubmissionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVocabSubmissionsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonPassages1ActionPerformed
+        main.openVocabSubmissions(this);
+    }//GEN-LAST:event_ButtonVocabSubmissionsActionPerformed
+
+    private void ButtonVocabListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVocabListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonVocabListActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,8 +315,9 @@ public class HomePage extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonFlashcards;
-    private javax.swing.JButton ButtonPassages1;
     private javax.swing.JButton ButtonSave;
+    private javax.swing.JButton ButtonVocabList;
+    private javax.swing.JButton ButtonVocabSubmissions;
     private javax.swing.JLabel LabelWelcome;
     private javax.swing.JMenu MenuAbout;
     private javax.swing.JMenuBar MenuBar;
