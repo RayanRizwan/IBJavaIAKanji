@@ -466,6 +466,8 @@ public class Sign_Up extends javax.swing.JDialog {
        if (main.currentStudent != null){
            // Created file is tited off of the users username
            Serialiser.serialiseKanjiList(main.currentStudent.Kanji, (main.currentStudent.username + "_kanji_list.ser"));
+           main.SerialiseStudents(main.Students, "All_Students.ser");
+           main.SerialiseTeachers(main.Teacher, "All_Teachers.ser");
        }
        l.setVisible(false);
    }

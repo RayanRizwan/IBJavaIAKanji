@@ -84,7 +84,6 @@ public class HomePage extends javax.swing.JFrame {
         LabelWelcome = new javax.swing.JLabel();
         jLabelBestLabelOpportunities = new javax.swing.JLabel();
         labelLearnJapanese = new javax.swing.JLabel();
-        ButtonSave = new javax.swing.JButton();
         ButtonFlashcards = new javax.swing.JButton();
         ButtonVocabSubmissions = new javax.swing.JButton();
         ButtonVocabList = new javax.swing.JButton();
@@ -107,13 +106,6 @@ public class HomePage extends javax.swing.JFrame {
 
         labelLearnJapanese.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         labelLearnJapanese.setText("Learn Japanese as if it's your native tongue");
-
-        ButtonSave.setText("Save");
-        ButtonSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonSaveActionPerformed(evt);
-            }
-        });
 
         ButtonFlashcards.setText("Flashcards");
         ButtonFlashcards.addActionListener(new java.awt.event.ActionListener() {
@@ -211,10 +203,8 @@ public class HomePage extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(ButtonVocabSubmissions)
                         .addGap(18, 18, 18)
-                        .addComponent(ButtonVocabList, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(162, Short.MAX_VALUE))
+                        .addComponent(ButtonVocabList, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(282, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,7 +218,6 @@ public class HomePage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonFlashcards, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonVocabList, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonVocabSubmissions, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -261,11 +250,6 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
         main.openUserSettings(this);
     }//GEN-LAST:event_jMenu2MenuSelected
-
-    private void ButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_ButtonSaveActionPerformed
 
     private void ButtonVocabSubmissionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVocabSubmissionsActionPerformed
         // TODO add your handling code here:
@@ -315,7 +299,6 @@ public class HomePage extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonFlashcards;
-    private javax.swing.JButton ButtonSave;
     private javax.swing.JButton ButtonVocabList;
     private javax.swing.JButton ButtonVocabSubmissions;
     private javax.swing.JLabel LabelWelcome;

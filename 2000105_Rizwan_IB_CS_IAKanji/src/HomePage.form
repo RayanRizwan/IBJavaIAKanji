@@ -113,11 +113,9 @@
                       <Component id="ButtonVocabSubmissions" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="ButtonVocabList" min="-2" pref="102" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ButtonSave" min="-2" pref="102" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="162" max="32767" attributes="0"/>
+              <EmptySpace pref="282" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -133,7 +131,6 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ButtonFlashcards" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="ButtonSave" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="ButtonVocabList" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="ButtonVocabSubmissions" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
@@ -163,14 +160,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Learn Japanese as if it&apos;s your native tongue"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="ButtonSave">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Save"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonSaveActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ButtonFlashcards">
       <Properties>
