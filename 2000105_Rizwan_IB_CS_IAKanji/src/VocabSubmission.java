@@ -1,3 +1,7 @@
+
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
@@ -12,8 +16,28 @@ public class VocabSubmission extends javax.swing.JDialog {
     /**
      * Creates new form VocabSubmission
      */
+    App main = App.getInstance();
     public VocabSubmission(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        
+        
+        if (main.currentStudent != null){
+            try{
+            // checks that if a locale has been set then the language changes to the necessary language
+                ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
+                LabelDirections.setText(messages.getString("DirectionsVocabSubmission"));
+                ButtonEnter.setText(messages.getString("Enter"));
+                labelWord.setText(messages.getString("Word"));
+                labelReading.setText(messages.getString("Reading"));
+                labelMeaning.setText(messages.getString("Meaning"));
+            }
+            catch (MissingResourceException e) {
+                // Fallback to default values (English) if bundle not found
+                
+                System.err.println("Resource bundle missing: " + e.getMessage());
+            }
+        }
+        
         initComponents();
     }
 
@@ -26,21 +50,183 @@ public class VocabSubmission extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TextFieldAnswer = new javax.swing.JTextField();
+        ButtonCorrect = new javax.swing.JButton();
+        LabelDirections = new javax.swing.JLabel();
+        TextFieldWord = new javax.swing.JTextField();
+        ButtonEnter = new javax.swing.JButton();
+        labelWord = new javax.swing.JLabel();
+        labelReading = new javax.swing.JLabel();
+        TextFieldReading = new javax.swing.JTextField();
+        labelMeaning = new javax.swing.JLabel();
+        TextFieldMeaning = new javax.swing.JTextField();
+        MenuBar = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        MenuLogin = new javax.swing.JMenu();
+        MenuSignUp = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        MenuAbout = new javax.swing.JMenu();
+
+        TextFieldAnswer.setText("Type here");
+
+        ButtonCorrect.setText("Check");
+        ButtonCorrect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCorrectActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        LabelDirections.setText("Vocab Submission: Submit vocabulary you have seen in passages");
+
+        TextFieldWord.setText("Enter word");
+
+        ButtonEnter.setText("Enter");
+        ButtonEnter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEnterActionPerformed(evt);
+            }
+        });
+
+        labelWord.setText("Word");
+
+        labelReading.setText("Reading");
+
+        TextFieldReading.setText("Enter word");
+
+        labelMeaning.setText("Meaning");
+
+        TextFieldMeaning.setText("Enter word");
+
+        MenuBar.setBackground(new java.awt.Color(205, 235, 217));
+        MenuBar.setAutoscrolls(true);
+        MenuBar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
+
+        jMenu1.setText("漢字");
+        jMenu1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
+        MenuBar.add(jMenu1);
+
+        MenuLogin.setText("Login");
+        MenuLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
+        MenuLogin.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                MenuLoginMenuSelected(evt);
+            }
+        });
+        MenuLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuLoginActionPerformed(evt);
+            }
+        });
+        MenuBar.add(MenuLogin);
+
+        MenuSignUp.setText("Sign Up");
+        MenuSignUp.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        MenuSignUp.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                MenuSignUpMenuSelected(evt);
+            }
+        });
+        MenuBar.add(MenuSignUp);
+
+        jMenu2.setText("User");
+        MenuBar.add(jMenu2);
+
+        MenuAbout.setText("About");
+        MenuAbout.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        MenuBar.add(MenuAbout);
+
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(LabelDirections)
+                .addContainerGap(100, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelMeaning)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(labelWord)
+                        .addComponent(labelReading)))
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TextFieldMeaning, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextFieldReading, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextFieldWord, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(ButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(109, 109, 109))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(LabelDirections)
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextFieldWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelWord))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelReading)
+                    .addComponent(TextFieldReading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextFieldMeaning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelMeaning))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(ButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void MenuLoginMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuLoginMenuSelected
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_MenuLoginMenuSelected
+
+    private void MenuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuLoginActionPerformed
+
+    private void MenuSignUpMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_MenuSignUpMenuSelected
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_MenuSignUpMenuSelected
+
+    private void ButtonCorrectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCorrectActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ButtonCorrectActionPerformed
+
+    private void ButtonEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEnterActionPerformed
+        // TODO add your handling code here:
+        String word = TextFieldWord.getText();
+        String reading = TextFieldReading.getText();
+        String meaning = TextFieldMeaning.getText();
+        // Create word with the above parameters
+        
+        Word w = new Word(word, meaning, reading);  
+        
+        main.currentStudent.Vocab.add(w);
+    }//GEN-LAST:event_ButtonEnterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -85,5 +271,21 @@ public class VocabSubmission extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonCorrect;
+    private javax.swing.JButton ButtonEnter;
+    private javax.swing.JLabel LabelDirections;
+    private javax.swing.JMenu MenuAbout;
+    private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JMenu MenuLogin;
+    private javax.swing.JMenu MenuSignUp;
+    private javax.swing.JTextField TextFieldAnswer;
+    private javax.swing.JTextField TextFieldMeaning;
+    private javax.swing.JTextField TextFieldReading;
+    private javax.swing.JTextField TextFieldWord;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JLabel labelMeaning;
+    private javax.swing.JLabel labelReading;
+    private javax.swing.JLabel labelWord;
     // End of variables declaration//GEN-END:variables
 }
