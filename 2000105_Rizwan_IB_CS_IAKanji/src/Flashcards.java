@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -31,8 +32,12 @@ public class Flashcards extends javax.swing.JDialog {
             try{
             // checks that if a locale has been set then the language changes to the necessary language
                 ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
-                LabelDirections.setText(messages.getString("DirectionsKanji"));
-                ButtonCorrect.setText(messages.getString("Check"));
+                if (main.locale == Locale.JAPAN){
+                    LabelDirections.setText(messages.getString("DirectionsKanji"));
+                    ButtonCorrect.setText(messages.getString("Check"));
+                    ButtonExit.setText(messages.getString("Exit"));
+                }
+                
             }
             catch (MissingResourceException e) {
                 // Fallback to default values (English) if bundle not found

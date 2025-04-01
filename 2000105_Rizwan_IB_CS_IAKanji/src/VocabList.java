@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -30,8 +31,14 @@ public class VocabList extends javax.swing.JDialog {
             try{
             // checks that if a locale has been set then the language changes to the necessary language
                 ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
-                LabelDirections.setText(messages.getString("DirectionsKanji"));
-                ButtonCorrect.setText(messages.getString("Check"));
+                if (main.locale == Locale.JAPAN){
+                    LabelDirections.setText(messages.getString("DirectionsKanji"));
+                    ButtonCorrect.setText(messages.getString("Check"));
+                    ButtonExit.setText(messages.getString("Exit"));
+                    LabelMeaning.setText(messages.getString("Meaning"));
+                    LabelReading.setText(messages.getString("Reading"));
+                }
+                
             }
             catch (MissingResourceException e) {
                 // Fallback to default values (English) if bundle not found
@@ -58,8 +65,8 @@ public class VocabList extends javax.swing.JDialog {
         ButtonExit = new javax.swing.JButton();
         LabelCorrect = new javax.swing.JLabel();
         LabelDirections = new javax.swing.JLabel();
-        LabelWord1 = new javax.swing.JLabel();
-        LabelWord2 = new javax.swing.JLabel();
+        LabelMeaning = new javax.swing.JLabel();
+        LabelReading = new javax.swing.JLabel();
         TextFieldReading = new javax.swing.JTextField();
         MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -92,9 +99,9 @@ public class VocabList extends javax.swing.JDialog {
 
         LabelDirections.setText("Vocab Flashcards: If you know the meaning of the word, click \"Check\"");
 
-        LabelWord1.setText("Meaning");
+        LabelMeaning.setText("Meaning");
 
-        LabelWord2.setText("Reading");
+        LabelReading.setText("Reading");
 
         TextFieldReading.setText("Type here");
 
@@ -159,8 +166,8 @@ public class VocabList extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LabelWord1)
-                                    .addComponent(LabelWord2))
+                                    .addComponent(LabelMeaning)
+                                    .addComponent(LabelReading))
                                 .addGap(34, 34, 34)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(TextFieldReading, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,10 +192,10 @@ public class VocabList extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextFieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelWord1))
+                    .addComponent(LabelMeaning))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelWord2)
+                    .addComponent(LabelReading)
                     .addComponent(TextFieldReading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -294,9 +301,9 @@ public class VocabList extends javax.swing.JDialog {
     private javax.swing.JButton ButtonExit;
     private javax.swing.JLabel LabelCorrect;
     private javax.swing.JLabel LabelDirections;
+    private javax.swing.JLabel LabelMeaning;
+    private javax.swing.JLabel LabelReading;
     private javax.swing.JLabel LabelWord;
-    private javax.swing.JLabel LabelWord1;
-    private javax.swing.JLabel LabelWord2;
     private javax.swing.JMenu MenuAbout;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MenuLogin;

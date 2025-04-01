@@ -92,8 +92,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="LabelWord1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelWord2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LabelMeaning" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LabelReading" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -128,11 +128,11 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="TextFieldAnswer" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="LabelWord1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LabelMeaning" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="LabelWord2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LabelReading" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="TextFieldReading" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
@@ -184,12 +184,12 @@
         <Property name="text" type="java.lang.String" value="Vocab Flashcards: If you know the meaning of the word, click &quot;Check&quot;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="LabelWord1">
+    <Component class="javax.swing.JLabel" name="LabelMeaning">
       <Properties>
         <Property name="text" type="java.lang.String" value="Meaning"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="LabelWord2">
+    <Component class="javax.swing.JLabel" name="LabelReading">
       <Properties>
         <Property name="text" type="java.lang.String" value="Reading"/>
       </Properties>

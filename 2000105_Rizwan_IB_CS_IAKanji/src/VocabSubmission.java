@@ -1,4 +1,5 @@
 
+import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
@@ -25,12 +26,16 @@ public class VocabSubmission extends javax.swing.JDialog {
             try{
             // checks that if a locale has been set then the language changes to the necessary language
                 ResourceBundle messages = ResourceBundle.getBundle("messages", main.locale);
-                LabelDirections.setText(messages.getString("DirectionsVocabSubmission"));
-                ButtonEnter.setText(messages.getString("Enter"));
-                labelWord.setText(messages.getString("Word"));
-                labelReading.setText(messages.getString("Reading"));
-                labelMeaning.setText(messages.getString("Meaning"));
-                ButtonExit.setText(messages.getString("Exit"));
+                if (main.locale == Locale.JAPAN){
+                    // Only does this if the Locale is Japanese
+                    LabelDirections.setText(messages.getString("DirectionsVocabSubmission"));
+                    ButtonEnter.setText(messages.getString("Enter"));
+                    labelWord.setText(messages.getString("Word"));
+                    labelReading.setText(messages.getString("Reading"));
+                    labelMeaning.setText(messages.getString("Meaning"));
+                    ButtonExit.setText(messages.getString("Exit"));
+                }
+                
             }
             catch (MissingResourceException e) {
                 // Fallback to default values (English) if bundle not found

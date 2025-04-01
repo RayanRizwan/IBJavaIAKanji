@@ -38,7 +38,7 @@ public class App implements Serializable{
     Teacher currentTeacher = new Teacher();
     
     // Default language is English unless tampered with
-    static Locale locale = Locale.ENGLISH;
+    Locale locale = Locale.ENGLISH;
     
     public static void main(){
         
@@ -153,12 +153,13 @@ public class App implements Serializable{
     
     public void changeLocale(String language){
         // Change the language
-        if (language.toLowerCase().equals("japanese")){
+        if (language.equalsIgnoreCase("japanese")){
             locale = Locale.JAPAN;
         }
-        else if (language.toLowerCase().equals("english")){
+        else if (language.toLowerCase().equalsIgnoreCase("english")){
             locale = Locale.ENGLISH;
         }
+        
     }
     
     public void openFlaschards(Frame L){
