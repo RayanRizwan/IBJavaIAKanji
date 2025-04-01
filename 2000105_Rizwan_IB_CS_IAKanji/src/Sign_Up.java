@@ -390,9 +390,7 @@ public class Sign_Up extends javax.swing.JDialog {
         }
         
         // Changes language depending on what was set
-        if (language.equals("Japanese")){
-            main.locale = Locale.JAPAN;
-        }
+        main.changeLocale(language);
         
         
         ExitSignUp(this);

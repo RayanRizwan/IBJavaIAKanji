@@ -25,7 +25,10 @@ public class Serialiser {
                 new FileOutputStream(filename))) {
             oos.writeObject(kanjiList);
             System.out.println("Serialization successful");
-        } catch (IOException e) {
+        } 
+        // The below catch is extensively used and was borrowed from StackOverflow
+        // for debugging purposes
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
