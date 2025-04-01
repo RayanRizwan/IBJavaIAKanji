@@ -18,6 +18,7 @@ public class Login extends javax.swing.JDialog {
      * Creates new form Login
      */
     App main = App.getInstance();
+    // Use serialiser to save Kanji Lists when logging in
     Serialiser serialiser = Serialiser.getInstance();
     public Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -167,6 +168,8 @@ public class Login extends javax.swing.JDialog {
         
         String username = TextFieldUsername.getText();
         String password = TextFieldPassword.getText();
+        // Linear search to check if students have the 
+        // username and password
         for (int i = 0; i < main.Students.size(); i++) {
             if ((!main.Students.get(i).getUsername().equals(username)) || 
                     (!main.Students.get(i).getPassword().equals(password))){

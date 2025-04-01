@@ -23,7 +23,8 @@ import java.util.Locale;
 public class App implements Serializable{
     
     private static App instance = new App();
-
+    
+    // Keeps track of every single student and teacher
     public static ArrayList<Student> Students = new ArrayList<>();
     public static ArrayList<Teacher> Teacher = new ArrayList<>();
     private static ArrayList<Student> StudentsFake = new ArrayList<>();
@@ -32,9 +33,11 @@ public class App implements Serializable{
     Teacher non = new Teacher(StudentsFake, null, null, null, null, null, "000AAA"); 
     // Teacher non allows for a fake teacher to be created for any students without a classcode
 
+    // Keeps track of who the current user is
     Student currentStudent = new Student();
     Teacher currentTeacher = new Teacher();
     
+    // Default language is English unless tampered with
     public Locale locale = Locale.ENGLISH;
     
     public static void main(){
@@ -62,6 +65,7 @@ public class App implements Serializable{
     }
     
     public Teacher findClass(String classCode){
+        // Similarly linear searches to find the correct class
         for (int i = 0; i < Teacher.size(); i++) {
             String cc = Teacher.get(i).ClassCode;
             if (cc.equals(classCode)){
@@ -72,6 +76,7 @@ public class App implements Serializable{
     }
     
     public User findUser(String username){
+        // Finds the current User
         for (int i = 0; i < Teacher.size(); i++) {
             String user = Teacher.get(i).username;
             if (user.equals(username)){
@@ -130,6 +135,7 @@ public class App implements Serializable{
     }
 
     public void OpenSign_Up(Frame L){
+        // Methods that look like this open specific forms in this app
         Sign_Up l = new Sign_Up(L, true);
         l.setVisible(true);
     }
@@ -146,6 +152,7 @@ public class App implements Serializable{
     
     
     public void changeLocale(String language){
+        // Change the language
         if (language.equals("Japanese")){
             locale = Locale.JAPAN;
         }

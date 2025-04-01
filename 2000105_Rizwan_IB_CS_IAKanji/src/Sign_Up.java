@@ -25,6 +25,7 @@ public class Sign_Up extends javax.swing.JDialog {
     /**
      * Creates new form Sign_Up
      */
+    // Initialising variables which each user is assigned
     public String username = "";
     public String password = "";
     public String level = "";
@@ -369,6 +370,7 @@ public class Sign_Up extends javax.swing.JDialog {
             level = "Joyo";
         }
         
+        // Checks whether user is a student or teacher before creating new user
         if (teacher){
             Teacher x = createTeacher(username, password, passphrase, language, classCode);
             main.addTeacher(x);
@@ -387,6 +389,7 @@ public class Sign_Up extends javax.swing.JDialog {
             setKanjiList(x);
         }
         
+        // Changes language depending on what was set
         if (language.equals("Japanese")){
             main.locale = Locale.JAPAN;
         }
@@ -547,6 +550,9 @@ public class Sign_Up extends javax.swing.JDialog {
             }
             
         } catch (IOException e) {
+            // Catches like this were originally debugging tools that I frankly
+            // Found from StackOverflow, but have been kept to ensure nothing goes
+            // wrong
             e.printStackTrace();
         } catch (NumberFormatException e) {
             System.err.println("Error parsing integer from CSV: " + e.getMessage());

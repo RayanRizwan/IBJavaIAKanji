@@ -27,7 +27,8 @@ public class HomePage extends javax.swing.JFrame {
     Student currentStudent = main.getCurrentStudent();
     public HomePage() {
         initComponents();
-
+        
+        // Serialised files which find all students and teachers which exist
         File students = new File("All_Students.ser");
         File teachers = new File("All_Teachers.ser");
         

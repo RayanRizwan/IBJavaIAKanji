@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Student extends User {
     
-
+    // Kanji and Vocab are the individual dictionaries for each student
     ArrayList<Kanji> Kanji = new ArrayList<>();
     ArrayList<Word> Vocab = new ArrayList<>();
     Teacher teacher = new Teacher();
