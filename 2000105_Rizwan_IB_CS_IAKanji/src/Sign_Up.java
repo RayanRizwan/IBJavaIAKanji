@@ -344,6 +344,9 @@ public class Sign_Up extends javax.swing.JDialog {
         password = TextFieldPassword.getText();
         passphrase = TextFieldPassphrase.getText();
         language = ComboBoxLanguage.getSelectedItem().toString();
+        // Originally each class was going to have a classcode through which
+        // students could join, but this was scrapped do to a lack of necessity
+  
         classCode = "000AAA";
 
         
